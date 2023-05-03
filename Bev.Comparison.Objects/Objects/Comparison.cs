@@ -9,6 +9,6 @@
         public Description Description;
         public Institute[] Participants;
         public Person[] Authors;
-        public SiReal[] Values;
+        public Quantity[] Quantities;
     }
 }

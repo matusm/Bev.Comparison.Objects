@@ -1,11 +1,21 @@
-﻿using System;
-using System.Data.SqlTypes;
-using System.Reflection.Emit;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace Bev.Comparison.Objects
 {
-    [XmlRoot(ElementName = "real", Namespace = "https://ptb.de/si")]
+
+    // this is introduced just to have the correct namespace prefix
+    public class Quantity
+    {
+        [XmlElement(ElementName = "real", Namespace = "https://ptb.de/si")]
+        public SiReal Real;
+
+        public Quantity(SiReal real) => Real = real;
+
+        public Quantity() { }
+    }
+
+
+    [XmlRoot(ElementName = "real", Namespace = "https://ptb.de/si")] // this does not work as expected
     public class SiReal
     {
         public SiReal() { }
@@ -16,15 +26,9 @@ namespace Bev.Comparison.Objects
             Unit = unit;
         }
 
-        public SiReal(string label, double value, string unit) : this(value, unit)
-        {
-            Label = label;
-        }
+        public SiReal(string label, double value, string unit) : this(value, unit) => Label = label;
 
-        public SiReal(string label, double value, string unit, double standardUncertainty) : this(label, value, unit)
-        {
-            ExpandedUnc = new SiExpandedUnc(standardUncertainty);
-        }
+        public SiReal(string label, double value, string unit, double standardUncertainty) : this(label, value, unit) => ExpandedUnc = new SiExpandedUnc(standardUncertainty);
 
         [XmlElement(ElementName = "label", Namespace = "https://ptb.de/si")]
         public string Label;
@@ -39,7 +43,7 @@ namespace Bev.Comparison.Objects
         public SiExpandedUnc ExpandedUnc;
     }
 
-    [XmlRoot(ElementName = "expandedUnc", Namespace = "https://ptb.de/si")]
+    //[XmlRoot(ElementName = "expandedUnc", Namespace = "https://ptb.de/si")]
     public class SiExpandedUnc
     {
         public SiExpandedUnc(double uncertainty)

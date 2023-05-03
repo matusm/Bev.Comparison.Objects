@@ -91,11 +91,11 @@ namespace Bev.Comparison.Objects
 
             #region Quantities
 
-            SiReal frequencyLab1 = new SiReal("corrected frequency", 473456654.345, "\\kilo\\hertz", 0.9876);
+            Quantity frequencyLab1 = new Quantity( new SiReal("corrected frequency", 473456654.345, "\\kilo\\hertz", 0.9876));
 
-            SiReal iodineTemperature1 = new SiReal("iodine cold finger temperature", 15.01, @"\degreecentigrade");
+            Quantity iodineTemperature1 = new Quantity(new SiReal("iodine cold finger temperature", 15.01, @"\degreecentigrade"));
 
-            SiReal power = new SiReal(67, "\\micro\\watt");
+            Quantity power = new Quantity(new SiReal(67, "\\micro\\watt"));
 
             #endregion
 
@@ -108,7 +108,7 @@ namespace Bev.Comparison.Objects
                 ReportType = "Draft B report",
                 Participants = new[] { smu, cnam },
                 Authors = new[] { matus, fira, wallerand },
-                Values = new[] { frequencyLab1, iodineTemperature1, power }
+                Quantities = new[] { frequencyLab1, iodineTemperature1, power }
             };
 
             Console.WriteLine( GenerateXml(cclK11_2022, "CCL-K11.xml") );
