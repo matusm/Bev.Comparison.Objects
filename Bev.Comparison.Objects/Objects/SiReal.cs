@@ -9,6 +9,14 @@ namespace Bev.Comparison.Objects
         [XmlElement(ElementName = "real", Namespace = "https://ptb.de/si")]
         public SiReal Real;
 
+        public string Comment;
+
+        public Quantity(double value, string unit) => Real = new SiReal(value, unit);
+
+        public Quantity(string label, double value, string unit) => Real = new SiReal(label, value, unit);
+
+        public Quantity(string label, double value, string unit, double standardUncertainty) => Real = new SiReal(label, value, unit, standardUncertainty);
+
         public Quantity(SiReal real) => Real = real;
 
         public Quantity() { }

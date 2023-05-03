@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Bev.Comparison.Objects.Comparison">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAgAIAAAAAAAAAAAABAAIAAASAAAAEAAAA=</HashCode>
+      <FileName>Objects\Comparison.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.Description">
+    <Position X="2.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAgAIAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Description.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.Institute">
+    <Position X="5.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAARAAAIAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Institute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.Person">
+    <Position X="4" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQACAAAAAAEAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.Quantity">
+    <Position X="12.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\SiReal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.SiReal">
+    <Position X="14" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAIAAEAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Objects\SiReal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.SiExpandedUnc">
+    <Position X="15.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAASAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Objects\SiReal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.Utf8StringWriter" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.Program" Collapsed="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.Objects.MeasurementReport">
+    <Position X="7.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIACACAAAAAAA=</HashCode>
+      <FileName>Objects\MeasurementReport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.Objects.Artefact">
+    <Position X="11" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Objects\Report\Artefact\Artefact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.Objects.ParticipantData">
+    <Position X="9.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAABAAAAAAAAAAACAAAACAAAAAAAAA=</HashCode>
+      <FileName>Objects\Report\ParticipantData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.Objects.Report.Artefact.ArtefactDescription">
+    <Position X="14.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAIAAAAAAAEAAAAAAEAAgAAAAgAABAAIAA=</HashCode>
+      <FileName>Objects\Report\Artefact\ArtefactDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.Objects.Report.Artefact.ArtefactDetail">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAIIAAAAAAAgAAAAIAAACAAQAAAAAAA=</HashCode>
+      <FileName>Objects\Report\Artefact\ArtefactDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.Objects.Report.Artefact.ArtefactReferenceConditions">
+    <Position X="12.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Report\Artefact\ArtefactReferenceConditions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.Objects.Report.Artefact.WorkingParameter">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAEAAAAAAAAAACAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Report\Artefact\WorkingParameter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bev.Comparison.Objects.Objects.Report.DescriptionOfMeasurements">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Objects\Report\DescriptionOfMeasurements.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -49,6 +49,7 @@
     <Compile Include="Objects\Report\Artefact\ArtefactDetail.cs" />
     <Compile Include="Objects\Report\Artefact\ArtefactReferenceConditions.cs" />
     <Compile Include="Objects\Report\Artefact\WorkingParameter.cs" />
+    <Compile Include="Objects\Report\DescriptionOfMeasurements.cs" />
     <Compile Include="Objects\Report\ParticipantData.cs" />
     <Compile Include="Objects\MeasurementReport.cs" />
     <Compile Include="Program.cs" />
@@ -60,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

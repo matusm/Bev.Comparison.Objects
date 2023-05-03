@@ -1,4 +1,6 @@
-﻿namespace Bev.Comparison.Objects
+﻿using Bev.Comparison.Objects.Objects;
+
+namespace Bev.Comparison.Objects
 {
     public class Comparison
     {
@@ -9,6 +11,6 @@
         public Description Description;
         public Institute[] Participants;
         public Person[] Authors;
-        public Quantity[] Quantities;
+        public MeasurementReport[] ReportsDraftA;
     }
 }
