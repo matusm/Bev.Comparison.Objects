@@ -89,6 +89,16 @@ namespace Bev.Comparison.Objects
             };
             #endregion
 
+            #region Quantities
+
+            SiReal frequencyLab1 = new SiReal("corrected frequency", 473456654.345, "\\kilo\\hertz", 0.9876);
+
+            SiReal iodineTemperature1 = new SiReal("iodine cold finger temperature", 15.01, @"\degreecentigrade");
+
+            SiReal power = new SiReal(67, "\\micro\\watt");
+
+            #endregion
+
             Comparison cclK11_2022 = new Comparison
             {
                 ShortName = "CCL K11 (2022)",
@@ -97,7 +107,8 @@ namespace Bev.Comparison.Objects
                 Type = "Key Comparison",
                 ReportType = "Draft B report",
                 Participants = new[] { smu, cnam },
-                Authors = new[] { matus, fira, wallerand }
+                Authors = new[] { matus, fira, wallerand },
+                Values = new[] { frequencyLab1, iodineTemperature1, power }
             };
 
             Console.WriteLine( GenerateXml(cclK11_2022, "CCL-K11.xml") );
@@ -107,19 +118,21 @@ namespace Bev.Comparison.Objects
         static string GenerateXml(object obj, string filename)
         {
             XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-            ns.Add("money", "http://www.cohowinery.com");
+            ns.Add("xsd", "http://www.w3.org/2001/XMLSchema");
+            ns.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
+            ns.Add("si", "https://ptb.de/si");
 
             XmlSerializer x = new XmlSerializer(obj.GetType());
             Stream fs = new FileStream(filename, FileMode.Create);
             XmlWriter writer = new XmlTextWriter(fs, Encoding.UTF8);
-            x.Serialize(writer, obj);
-            //x.Serialize(writer, obj, ns);
+            //x.Serialize(writer, obj);
+            x.Serialize(writer, obj, ns);
             writer.Close();
 
             string utf8;
             using (StringWriter strWriter = new Utf8StringWriter())
             {
-                x.Serialize(strWriter, obj);
+                x.Serialize(strWriter, obj, ns);
                 utf8 = strWriter.ToString();
             }
             return utf8;
