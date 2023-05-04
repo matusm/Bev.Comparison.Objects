@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Objects\AppendixA.cs" />
     <Compile Include="Objects\Report\Artefact\Artefact.cs" />
     <Compile Include="Objects\Comparison.cs" />
     <Compile Include="Objects\Report\Artefact\ArtefactDescription.cs" />

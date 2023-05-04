@@ -11,6 +11,6 @@ namespace Bev.Comparison.Objects
         public Description Description;
         public Institute[] Participants;
         public Person[] Authors;
-        public MeasurementReport[] ReportsDraftA;
+        public AppendixA Appendix;
     }
 }

@@ -322,6 +322,13 @@ namespace Bev.Comparison.Objects
             };
             #endregion
 
+            AppendixA appendix = new AppendixA
+            {
+                Title = "Equipment and measuring processes of the participants",
+                Text = "Details of the individual equipment, standards and measurement data.",
+                ReportsDraftA = new[] { cnamDraftA, smuDraftA }
+            };
+
             Comparison cclK11_2022 = new Comparison
             {
                 ShortName = "CCL-K11 (2022)",
@@ -331,7 +338,7 @@ namespace Bev.Comparison.Objects
                 ReportType = "Draft B report",
                 Participants = new[] { smu, cnam },
                 Authors = new[] { matus, fira, wallerand, zechner, santos, lewis },
-                ReportsDraftA = new[] { cnamDraftA, smuDraftA }
+                Appendix = appendix
             };
 
             Console.WriteLine(GenerateXml(cclK11_2022, "CCL-K11_2022.xml"));
