@@ -30,7 +30,9 @@ namespace Bev.Comparison.Objects
                 Name = "Bundesamt für Eich- und Vermessungswesen",
                 Acronym = "BEV",
                 Country = "Austria",
-                Address = "Arltgasse 35, 1160 Wien, Austria"
+                Address = "Arltgasse 35, 1160 Wien, Austria",
+                RMO = "EURAMET",
+                CountryCode = "AT"
             };
 
             Institute smu = new Institute
@@ -38,7 +40,9 @@ namespace Bev.Comparison.Objects
                 Name = "Slovenský metrologický ústav",
                 Acronym = "SMU",
                 Country = "Slovak Republic",
-                Address = "Karloveská 63, 842 55 Bratislava"
+                Address = "Karloveská 63, 842 55 Bratislava",
+                RMO = "EURAMET",
+                CountryCode = "SK"
             };
 
             Institute cnam = new Institute
@@ -46,7 +50,9 @@ namespace Bev.Comparison.Objects
                 Name = "Conservatoire national des arts et métiers",
                 Acronym = "LNE-LCM/Cnam",
                 Country = "France",
-                Address = "61 rue du Landy, 93210 la plaine saint-Denis"
+                Address = "61 rue du Landy, 93210 la plaine saint-Denis",
+                RMO = "EURAMET",
+                CountryCode = "FR"
             };
 
             Institute npl = new Institute
@@ -54,7 +60,10 @@ namespace Bev.Comparison.Objects
                 Name = "National Physics Laboratory",
                 Acronym = "NPL",
                 Country = "Great Britain",
-                Address = "Teddington"
+                Address = "Teddington",
+                RMO = "EURAMET",
+                CountryCode = "UK"
+
             };
             #endregion
 
@@ -80,19 +89,26 @@ namespace Bev.Comparison.Objects
                 Affiliation = cnam,
                 Email = "jean-pierre.wallerand@cnam.fr"
             };
+            Person zechner = new Person
+            {
+                Name = "Georg Zechner",
+                Role = "node",
+                Affiliation = bev,
+                Email = "georg.zechner@bev.gv.at"
+            };
             #endregion
 
             #region Description
             Description description = new Description
             {
                 ContactPerson = new[] { matus },
-                Content = "long description with",
+                Content = "long description with ...",
                 Reference = "DOI",
                 ReleaseDate = "2023"
             };
             #endregion
 
-            #region Reports
+            #region Draft A Reports
             // first participant
             ParticipantData participantData1 = new ParticipantData();
             participantData1.ContactPerson = wallerand;
@@ -117,7 +133,7 @@ namespace Bev.Comparison.Objects
             WorkingParameter wpP1 = new WorkingParameter();
             wpP1.Parameter = "Output power";
             wpP1.NominalValue = new Quantity(100, "\\micro\\watt");
-            wpP1.SensitivityCoefficient = new Quantity("", - 0.04, "\\kilo\\hertz\\per\\micro\\watt", 0.01);
+            wpP1.SensitivityCoefficient = new Quantity("", -0.04, "\\kilo\\hertz\\per\\micro\\watt", 0.01);
             wpP1.Comment = "2022 re-measured at LNE-LCM/Cnam";
             WorkingParameter wpM1 = new WorkingParameter();
             wpM1.Parameter = "Modulation width";
@@ -154,7 +170,6 @@ namespace Bev.Comparison.Objects
 
             #endregion
 
-
             Comparison cclK11_2022 = new Comparison
             {
                 ShortName = "CCL-K11 (2022)",
@@ -163,11 +178,11 @@ namespace Bev.Comparison.Objects
                 Type = "Key Comparison",
                 ReportType = "Draft B report",
                 Participants = new[] { smu, cnam },
-                Authors = new[] { matus, fira, wallerand },
+                Authors = new[] { matus, fira, wallerand, zechner },
                 ReportsDraftA = new[] { mr1 }
             };
 
-            Console.WriteLine( GenerateXml(cclK11_2022, "CCL-K11.xml") );
+            Console.WriteLine(GenerateXml(cclK11_2022, "CCL-K11.xml"));
 
         }
 
