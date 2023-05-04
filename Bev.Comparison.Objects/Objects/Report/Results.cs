@@ -1,16 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Bev.Comparison.Objects.Objects.Report
+﻿namespace Bev.Comparison.Objects.Objects.Report
 {
     public class Results
     {
-        public Quantity MeasurementResult; // C.1
-        public Quantity UncorrectedMeasuredFrequency; // C.2
-        public Quantity MeasuredFrequency; // C.4, KCRV
+        // TP appendix C.1
+        public Quantity MeasurementResult;  // the measurand
 
+        // TP appendix C.2
+        public Quantity UncorrectedMeasuredFrequency;
+
+        // TP appendix C.3
+        public WorkingParameterCorrection[] Corrections;
+        public Quantity OverallFrequencyCorrection;
+
+        // TP appendix C.4
+        public Quantity MeasuredFrequency; // the KCRV
+
+        // TP appendix C.5
+        public Quantity FrequencyDifference; 
+        public Quantity FractionalFrequencyDifference;
+        public Quantity DegreeOfEquivalence;
+    }
+
+    public class WorkingParameterCorrection
+    {
+        public string Parameter;
+        public Quantity ActualValue;
+        public Quantity FrequencyCorrection;
     }
 }

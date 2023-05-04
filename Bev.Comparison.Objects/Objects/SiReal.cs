@@ -3,7 +3,7 @@
 namespace Bev.Comparison.Objects
 {
 
-    // this is introduced just to have the correct namespace prefix
+    // this clas is introduced just to have the correct namespace prefix si:real
     public class Quantity
     {
         [XmlElement(ElementName = "real", Namespace = "https://ptb.de/si")]
