@@ -52,6 +52,7 @@
     <Compile Include="Objects\Report\DescriptionOfMeasurements.cs" />
     <Compile Include="Objects\Report\ParticipantData.cs" />
     <Compile Include="Objects\MeasurementReport.cs" />
+    <Compile Include="Objects\Report\Results.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Objects\Description.cs" />
     <Compile Include="Objects\Institute.cs" />

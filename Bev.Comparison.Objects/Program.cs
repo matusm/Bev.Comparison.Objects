@@ -147,17 +147,17 @@ namespace Bev.Comparison.Objects
             WorkingParameter wpP1 = new WorkingParameter();
             wpP1.Parameter = "Output power";
             wpP1.NominalValue = new Quantity(100, "\\micro\\watt");
-            wpP1.SensitivityCoefficient = new Quantity("", -0.04, "\\kilo\\hertz\\per\\micro\\watt", 0.01);
+            wpP1.SensitivityCoefficient = new Quantity(null, -0.04, "\\kilo\\hertz\\per\\micro\\watt", 0.01);
             wpP1.Comment = "2022 re-measured at LNE-LCM/Cnam";
             WorkingParameter wpM1 = new WorkingParameter();
             wpM1.Parameter = "Modulation width";
             wpM1.NominalValue = new Quantity(6.0, "\\mega\\hertz");
-            wpM1.SensitivityCoefficient = new Quantity("", -10.2, "\\kilo\\hertz\\per\\mega\\hertz", 1.0);
+            wpM1.SensitivityCoefficient = new Quantity(null, -10.2, "\\kilo\\hertz\\per\\mega\\hertz", 1.0);
             wpM1.Comment = "2022 re-measured at LNE-LCM/Cnam";
             WorkingParameter wpT1 = new WorkingParameter();
             wpT1.Parameter = "Iodine cell cold finger temperature";
             wpT1.NominalValue = new Quantity(15.0, "\\degreecelsius");
-            wpT1.SensitivityCoefficient = new Quantity("", -13, "\\kilo\\hertz\\per\\degreecelsius", 1);
+            wpT1.SensitivityCoefficient = new Quantity(null, -13, "\\kilo\\hertz\\per\\degreecelsius", 1);
             wpT1.Comment = "2022 re-measured at LNE-LCM/Cnam";
             ArtefactReferenceConditions ref1 = new ArtefactReferenceConditions();
             ref1.WorkingParameters = new[] { wpP1, wpM1, wpT1 };
@@ -169,9 +169,16 @@ namespace Bev.Comparison.Objects
             dom1.Method = "A femtosecond fiber laser comb generator (BEV) is used to measure the absolute frequency of the 633 nm standard. The output beam of the standard is transferred to the comb via free space, avoiding optical feedback using a double stage Faraday isolator. All counters and synthesizers are referenced to an active hydrogen maser. This maser is part of the BEV clock assemble which takes part in the CCTF-K001.UTC key comparison thus providing a link to the SI.";
             dom1.Condition = "The measurements are made in accordance with the BEV quality system (respective working document A_0118). The laser was put into operation one week before the actual measurements (however not locked). A measurement of 4000 s was made with a sample time of 1 s (raw data filename LNE_2022_f_01.dat). This data was used to determine the KCRV. Immediately before and after this section the working parameters have been determined. Possible cycle slips and outliers are automatically detected and removed using a schema described in the references of the technical protocol and the working document A_0118.";
             dom1.AllanVariance = "A long run absolute frequency measurement of the laser was used to determine the relative overlapping Allan standard deviation (raw data filename LNE_2022_f_02.dat, 70 000 s).";
+            Results results1 = new Results();
+            results1.MeasurementResult = new Quantity("Expected frequency f_e (C.1)", 473_612_353_602.3, "\\kilo\\hertz", 12.0);
+            results1.UncorrectedMeasuredFrequency = new Quantity("Measured frequency (uncorrected) f_0 (C.2)", 473_612_353_611.806, "\\kilo\\hertz", 0.073);
+            results1.MeasuredFrequency = new Quantity("KCRV - Measured frequency f_m (C.4)", 473_612_353_607.543, "\\kilo\\hertz", 1.717);
+
+
             MeasurementReport mr1 = new MeasurementReport();
             mr1.Participant = participantData1;
             mr1.Artefact = artefact1;
+            mr1.Results = results1;
             mr1.DescriptionOfMeasurements = dom1;
 
 
