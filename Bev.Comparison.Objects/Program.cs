@@ -60,9 +60,9 @@ namespace Bev.Comparison.Objects
                 Name = "National Physics Laboratory",
                 Acronym = "NPL",
                 Country = "Great Britain",
-                Address = "Teddington",
+                Address = "Hampton Road, TW11 0LW,Teddington",
                 RMO = "EURAMET",
-                CountryCode = "UK"
+                CountryCode = "GB"
 
             };
             #endregion
@@ -95,6 +95,20 @@ namespace Bev.Comparison.Objects
                 Role = "node",
                 Affiliation = bev,
                 Email = "georg.zechner@bev.gv.at"
+            };
+            Person santos = new Person
+            {
+                Name = "Joao-Pedro Santos da Costa",
+                Role = null,
+                Affiliation = bev,
+                Email = "joao-pedro.santos-da-costa@bev.gv.at"
+            };
+            Person lewis = new Person
+            {
+                Name = "Andrew Lewis",
+                Role = null,
+                Affiliation = npl,
+                Email = "andrew.lewis@npl.co.uk"
             };
             #endregion
 
@@ -178,7 +192,7 @@ namespace Bev.Comparison.Objects
                 Type = "Key Comparison",
                 ReportType = "Draft B report",
                 Participants = new[] { smu, cnam },
-                Authors = new[] { matus, fira, wallerand, zechner },
+                Authors = new[] { matus, fira, wallerand, zechner, santos, lewis },
                 ReportsDraftA = new[] { mr1 }
             };
 
