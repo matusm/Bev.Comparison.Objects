@@ -2,11 +2,11 @@
 {
     public class Institute
     {
-        public string Acronym;
-        public string FullName;
+        public string NmiAcronym;
+        public string NmiFullName;
         public string Address;
         public string Country;
         public string RMO;
-        public string CountryCode;
+        public string CountryCodeISO3166_1;
     }
 }

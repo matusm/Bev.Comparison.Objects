@@ -19,42 +19,42 @@ namespace Bev.Comparison.Objects
             #region Institutes
             Institute bev = new Institute
             {
-                FullName = "Bundesamt für Eich- und Vermessungswesen",
-                Acronym = "BEV",
+                NmiFullName = "Bundesamt für Eich- und Vermessungswesen",
+                NmiAcronym = "BEV",
                 Country = "Austria",
                 Address = "Arltgasse 35, 1160 Wien, Austria",
                 RMO = "EURAMET",
-                CountryCode = "AT"
+                CountryCodeISO3166_1 = "AT"
             };
 
             Institute smu = new Institute
             {
-                FullName = "Slovenský metrologický ústav",
-                Acronym = "SMU",
+                NmiFullName = "Slovenský metrologický ústav",
+                NmiAcronym = "SMU",
                 Country = "Slovak Republic",
                 Address = "Karloveská 63, 842 55 Bratislava",
                 RMO = "EURAMET",
-                CountryCode = "SK"
+                CountryCodeISO3166_1 = "SK"
             };
 
             Institute cnam = new Institute
             {
-                FullName = "Conservatoire national des arts et métiers",
-                Acronym = "LNE-LCM/Cnam",
+                NmiFullName = "Conservatoire national des arts et métiers",
+                NmiAcronym = "LNE-LCM/Cnam",
                 Country = "France",
                 Address = "61 rue du Landy, 93210 la plaine saint-Denis",
                 RMO = "EURAMET",
-                CountryCode = "FR"
+                CountryCodeISO3166_1 = "FR"
             };
 
             Institute npl = new Institute
             {
-                FullName = "National Physics Laboratory",
-                Acronym = "NPL",
+                NmiFullName = "National Physics Laboratory",
+                NmiAcronym = "NPL",
                 Country = "Great Britain",
                 Address = "Hampton Road, TW11 0LW,Teddington",
                 RMO = "EURAMET",
-                CountryCode = "GB"
+                CountryCodeISO3166_1 = "GB"
 
             };
             #endregion
