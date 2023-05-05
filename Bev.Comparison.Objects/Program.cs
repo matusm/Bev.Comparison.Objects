@@ -329,13 +329,43 @@ namespace Bev.Comparison.Objects
                 ReportsDraftA = new[] { cnamDraftA, smuDraftA }
             };
 
-            Comparison cclK11_2022 = new Comparison
+            #region 1 Document control
+            DocumentControlItem dci1 = new DocumentControlItem
+            {
+                DocumentVersion = "Version Draft B",
+                IssueDate = new DateTime(2023, 04, 25)
+            };
+            DocumentControlItem dci2 = new DocumentControlItem
+            {
+                DocumentVersion = "Version Draft B.1",
+                IssueDate = new DateTime(2023, 05, 20)
+            };
+            DocumentControl documentControl = new DocumentControl
+            {
+                Versions = new[] { dci1, dci2 }
+            };
+            #endregion
+
+            #region 2 Introduction
+            string p1 = "The metrological equivalence of national measurement standards and of calibration certificates issued by national metrology institutes is established by a set of key and supplementary comparisons chosen and organized by the Consultative Committees of the CIPM or by the regional metrology organizations in collaboration with the Consultative Committees.";
+            string p2 = "At its meeting in September 2007, the CCL decided upon a key comparison of optical frequency and wavelength standards, named CCL-K11, with BEV as the pilot laboratory. The comparison was registered in 2008 and it is supposed as an on-going comparison.";
+            string p3 = "This document constitutes the twelfth final report for the ongoing key comparison CCL-K11.";
+
+            Introduction introduction = new Introduction
+            {
+                Paragraphs = new[] { p1, p2, p3 }
+            };
+            #endregion
+
+            ComparisonReport cclK11_2022 = new ComparisonReport
             {
                 ShortName = "CCL-K11 (2022)",
                 FullName = "CCL-K11 Comparison of optical frequency and wavelength standards for the period 2022",
                 Description = description,
                 Type = "Key Comparison",
                 ReportType = "Draft B report",
+                DocumentControl = documentControl,
+                Introduction = introduction,
                 Participants = new[] { smu, cnam },
                 Authors = new[] { matus, fira, wallerand, zechner, santos, lewis },
                 Appendix = appendix

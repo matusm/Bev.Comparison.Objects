@@ -44,8 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Objects\AppendixA.cs" />
+    <Compile Include="Objects\DocumentControl.cs" />
+    <Compile Include="Objects\Introduction.cs" />
     <Compile Include="Objects\Report\Artefact\Artefact.cs" />
-    <Compile Include="Objects\Comparison.cs" />
+    <Compile Include="Objects\ComparisonReport.cs" />
     <Compile Include="Objects\Report\Artefact\ArtefactDescription.cs" />
     <Compile Include="Objects\Report\Artefact\ArtefactDetail.cs" />
     <Compile Include="Objects\Report\Artefact\ArtefactReferenceConditions.cs" />
