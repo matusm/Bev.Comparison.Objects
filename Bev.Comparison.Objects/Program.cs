@@ -115,14 +115,14 @@ namespace Bev.Comparison.Objects
             #endregion
 
             #region CNAM Draft A Report
-            ParticipantData participantData1 = new ParticipantData
+            ParticipantData participantDataCnam = new ParticipantData
             {
                 ContactPerson = wallerand,
                 Participant = cnam,
                 DateOfMeasurements = "23.05.2022 - 24.05.2022",
                 Host = bev
             };
-            ArtefactDescription artDes1 = new ArtefactDescription
+            ArtefactDescription artefactDescriptionCnam = new ArtefactDescription
             {
                 Designation = "INM9",
                 Manufacturer = "LNE-LCM/Cnam",
@@ -132,7 +132,7 @@ namespace Bev.Comparison.Objects
                 OperationPrinciple = "MEP 2003",
                 LastCompared = "2005 BIPM-K11"
             };
-            ArtefactDetail artDet1 = new ArtefactDetail
+            ArtefactDetail artefactDetailCnam = new ArtefactDetail
             {
                 LaserType = "Iodine stabilised HeNe Laser",
                 StabilisationTechnique = "Saturation spectroscopy on iodine vapour, 3f frequency modulation",
@@ -142,44 +142,44 @@ namespace Bev.Comparison.Objects
                 LaserCavityLength = new Quantity(40, "\\centi\\metre"),
                 CavityDetails = "M1: 60 cm, 1 %, iodine cell side, output mirror, M2: plane, 1 %, rear, tube side"
             };
-            WorkingParameter wpP1 = new WorkingParameter
+            WorkingParameter wpPcnam = new WorkingParameter
             {
                 Parameter = "Output power",
                 NominalValue = new Quantity(100, "\\micro\\watt"),
                 SensitivityCoefficient = new Quantity(null, -0.04, "\\kilo\\hertz\\per\\micro\\watt", 0.01),
                 Comment = "2022 re-measured at LNE-LCM/Cnam"
             };
-            WorkingParameter wpM1 = new WorkingParameter
+            WorkingParameter wpMcnam = new WorkingParameter
             {
                 Parameter = "Modulation width",
                 NominalValue = new Quantity(6.0, "\\mega\\hertz"),
                 SensitivityCoefficient = new Quantity(null, -10.2, "\\kilo\\hertz\\per\\mega\\hertz", 1.0),
                 Comment = "2022 re-measured at LNE-LCM/Cnam"
             };
-            WorkingParameter wpT1 = new WorkingParameter
+            WorkingParameter wpTcnam = new WorkingParameter
             {
                 Parameter = "Iodine cell cold finger temperature",
                 NominalValue = new Quantity(15.0, "\\degreecelsius"),
                 SensitivityCoefficient = new Quantity(null, -13, "\\kilo\\hertz\\per\\degreecelsius", 1),
                 Comment = "2022 re-measured at LNE-LCM/Cnam"
             };
-            ArtefactReferenceConditions ref1 = new ArtefactReferenceConditions
+            ArtefactReferenceConditions artefactReferenceConditionsCnam = new ArtefactReferenceConditions
             {
-                WorkingParameters = new[] { wpP1, wpM1, wpT1 }
+                WorkingParameters = new[] { wpPcnam, wpMcnam, wpTcnam }
             };
-            Artefact artefact1 = new Artefact
+            Artefact artefactCnam = new Artefact
             {
-                ArtefactDescription = artDes1,
-                ArtefactDetail = artDet1,
-                ArtefactReferenceConditions = ref1
+                ArtefactDescription = artefactDescriptionCnam,
+                ArtefactDetail = artefactDetailCnam,
+                ArtefactReferenceConditions = artefactReferenceConditionsCnam
             };
-            DescriptionOfMeasurements dom1 = new DescriptionOfMeasurements
+            DescriptionOfMeasurements descriptionOfMeasurementsCnam = new DescriptionOfMeasurements
             {
                 Method = "A femtosecond fiber laser comb generator (BEV) is used to measure the absolute frequency of the 633 nm standard. The output beam of the standard is transferred to the comb via free space, avoiding optical feedback using a double stage Faraday isolator. All counters and synthesizers are referenced to an active hydrogen maser. This maser is part of the BEV clock assemble which takes part in the CCTF-K001.UTC key comparison thus providing a link to the SI.",
                 Condition = "The measurements are made in accordance with the BEV quality system (respective working document A_0118). The laser was put into operation one week before the actual measurements (however not locked). A measurement of 4000 s was made with a sample time of 1 s (raw data filename LNE_2022_f_01.dat). This data was used to determine the KCRV. Immediately before and after this section the working parameters have been determined. Possible cycle slips and outliers are automatically detected and removed using a schema described in the references of the technical protocol and the working document A_0118.",
                 AllanVariance = "A long run absolute frequency measurement of the laser was used to determine the relative overlapping Allan standard deviation (raw data filename LNE_2022_f_02.dat, 70 000 s)."
             };
-            Results results1 = new Results
+            Results resultsCnam = new Results
             {
                 MeasurementResult = new Quantity("Expected frequency f_e (C.1)", 473_612_353_602.3, "\\kilo\\hertz", 12.0),
                 UncorrectedMeasuredFrequency = new Quantity("Measured frequency (uncorrected) f_0 (C.2)", 473_612_353_611.806, "\\kilo\\hertz", 0.073),
@@ -207,15 +207,15 @@ namespace Bev.Comparison.Objects
                 ActualValue = new Quantity(null, 15.0, "\\degreecelsius", 0.1),
                 FrequencyCorrection = new Quantity(null, 0.000, "\\kilo\\hertz", 1.300)
             };
-            results1.Corrections = new[] { wpc11, wpc12, wpc13 };
+            resultsCnam.Corrections = new[] { wpc11, wpc12, wpc13 };
 
             // collate all appedices
             MeasurementReport cnamDraftA = new MeasurementReport
             {
-                ParticipantData = participantData1,
-                Artefact = artefact1,
-                Results = results1,
-                DescriptionOfMeasurements = dom1
+                ParticipantData = participantDataCnam,
+                Artefact = artefactCnam,
+                Results = resultsCnam,
+                DescriptionOfMeasurements = descriptionOfMeasurementsCnam
             };
             #endregion
 
@@ -322,13 +322,6 @@ namespace Bev.Comparison.Objects
             };
             #endregion
 
-            AppendixA appendix = new AppendixA
-            {
-                Title = "Equipment and measuring processes of the participants",
-                Text = "Details of the individual equipment, standards and measurement data.",
-                ReportsDraftA = new[] { cnamDraftA, smuDraftA }
-            };
-
             #region 1 Document control
             DocumentControlItem dci1 = new DocumentControlItem
             {
@@ -357,17 +350,26 @@ namespace Bev.Comparison.Objects
             };
             #endregion
 
+            #region A Appendix
+            AppendixA appendix = new AppendixA
+            {
+                Title = "Equipment and measuring processes of the participants",
+                Text = "Details of the individual equipment, standards and measurement data.",
+                ReportsDraftA = new[] { cnamDraftA, smuDraftA }
+            };
+            #endregion
+
             ComparisonReport cclK11_2022 = new ComparisonReport
             {
-                ShortName = "CCL-K11 (2022)",
-                FullName = "CCL-K11 Comparison of optical frequency and wavelength standards for the period 2022",
+                ShortTitle = "CCL-K11 (2022)",
+                FullTitle = "CCL-K11 Comparison of optical frequency and wavelength standards for the period 2022",
+                Authors = new[] { matus, fira, wallerand, zechner, santos, lewis },
                 Description = description,
-                Type = "Key Comparison",
+                ComparisonType = "Key Comparison",
                 ReportType = "Draft B report",
                 DocumentControl = documentControl,
                 Introduction = introduction,
                 Participants = new[] { smu, cnam },
-                Authors = new[] { matus, fira, wallerand, zechner, santos, lewis },
                 Appendix = appendix
             };
 
