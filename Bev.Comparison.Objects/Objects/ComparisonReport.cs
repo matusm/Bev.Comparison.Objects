@@ -13,6 +13,7 @@ namespace Bev.Comparison.Objects
         public DocumentControl DocumentControl;
         public Introduction Introduction;
         public Institute[] Participants;
+        public Analysis Analysis;
         public AppendixA Appendix;
     }
 }

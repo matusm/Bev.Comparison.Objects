@@ -350,6 +350,21 @@ namespace Bev.Comparison.Objects
             };
             #endregion
 
+            #region 7 Analysis
+
+            Discussion discussion = new Discussion
+            {
+                Text = "to be discussed"
+            };
+
+            Analysis analysis = new Analysis
+            {
+                Text = "to be discussed",
+                Discussion = discussion
+            };
+
+            #endregion
+
             #region A Appendix
             AppendixA appendix = new AppendixA
             {
@@ -370,6 +385,7 @@ namespace Bev.Comparison.Objects
                 DocumentControl = documentControl,
                 Introduction = introduction,
                 Participants = new[] { smu, cnam },
+                Analysis = analysis,
                 Appendix = appendix
             };
 

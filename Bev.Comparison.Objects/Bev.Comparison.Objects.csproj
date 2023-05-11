@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Objects\Analysis.cs" />
     <Compile Include="Objects\AppendixA.cs" />
     <Compile Include="Objects\DocumentControl.cs" />
     <Compile Include="Objects\Introduction.cs" />
