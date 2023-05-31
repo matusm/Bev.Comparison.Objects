@@ -1,0 +1,784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mcr:comparisonReport xmlns:mcr="https://bev.gv.at/mcr" xmlns:si="https://ptb.de/si" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://bev.gv.at/mcr ./measurementcomparisonreport.xsd" schemaVersion="1.0">
+	<mcr:fullTitle>CCL-K11 Comparison of optical frequency and wavelength standards for the period 2022</mcr:fullTitle>
+	<mcr:shortTitle>CCL-K11 (2022)</mcr:shortTitle>
+	<mcr:comparisonType>Key Comparison</mcr:comparisonType>
+	<mcr:reportType>Draft B report</mcr:reportType>
+	<mcr:authors>
+		<mcr:person>
+			<mcr:name>Michael Matus</mcr:name>
+			<mcr:role>Main Author</mcr:role>
+			<mcr:email>michael.matus@bev.gv.at</mcr:email>
+			<mcr:affiliation>
+				<mcr:type>National Metrology Institute</mcr:type>
+				<mcr:affiliationAcronym>BEV</mcr:affiliationAcronym>
+				<mcr:affiliationName>Bundesamt für Eich- und Vermessungswesen</mcr:affiliationName>
+				<mcr:address>Arltgasse 35, 1160 Wien, Austria</mcr:address>
+				<mcr:country>Austria</mcr:country>
+				<mcr:countryCodeISO3166_1>AT</mcr:countryCodeISO3166_1>
+				<mcr:rmo>EURAMET</mcr:rmo>
+			</mcr:affiliation>
+		</mcr:person>
+		<mcr:person>
+			<mcr:name>Roman Fira</mcr:name>
+			<mcr:role>Co-Author</mcr:role>
+			<mcr:email>fira@smu.gov.sk</mcr:email>
+			<mcr:affiliation>
+				<mcr:type>National Metrology Institute</mcr:type>
+				<mcr:affiliationAcronym>SMU</mcr:affiliationAcronym>
+				<mcr:affiliationName>Slovenský metrologický ústav</mcr:affiliationName>
+				<mcr:address>Karloveská 63, 842 55 Bratislava</mcr:address>
+				<mcr:country>Slovak Republic</mcr:country>
+				<mcr:countryCodeISO3166_1>SK</mcr:countryCodeISO3166_1>
+				<mcr:rmo>EURAMET</mcr:rmo>
+			</mcr:affiliation>
+		</mcr:person>
+		<mcr:person>
+			<mcr:name>Jean-Pierre Wallerand </mcr:name>
+			<mcr:role>Co-Author</mcr:role>
+			<mcr:email>jean-pierre.wallerand@cnam.fr</mcr:email>
+			<mcr:affiliation>
+				<mcr:type>National Metrology Institute</mcr:type>
+				<mcr:affiliationAcronym>LNE-LCM/Cnam</mcr:affiliationAcronym>
+				<mcr:affiliationName>Conservatoire national des arts et métiers</mcr:affiliationName>
+				<mcr:address>61 rue du Landy, 93210 la plaine saint-Denis</mcr:address>
+				<mcr:country>France</mcr:country>
+				<mcr:countryCodeISO3166_1>FR</mcr:countryCodeISO3166_1>
+				<mcr:rmo>EURAMET</mcr:rmo>
+			</mcr:affiliation>
+		</mcr:person>
+		<mcr:person>
+			<mcr:name>Georg Zechner</mcr:name>
+			<mcr:role>Co-Author</mcr:role>
+			<mcr:email>georg.zechner@bev.gv.at</mcr:email>
+			<mcr:affiliation>
+				<mcr:type>National Metrology Institute</mcr:type>
+				<mcr:affiliationAcronym>BEV</mcr:affiliationAcronym>
+				<mcr:affiliationName>Bundesamt für Eich- und Vermessungswesen</mcr:affiliationName>
+				<mcr:address>Arltgasse 35, 1160 Wien, Austria</mcr:address>
+				<mcr:country>Austria</mcr:country>
+				<mcr:countryCodeISO3166_1>AT</mcr:countryCodeISO3166_1>
+				<mcr:rmo>EURAMET</mcr:rmo>
+			</mcr:affiliation>
+		</mcr:person>
+		<mcr:person>
+			<mcr:name>Joao-Pedro Santos da Costa</mcr:name>
+			<mcr:role>Co-Author</mcr:role>
+			<mcr:email>joao-pedro.santos-da-costa@bev.gv.at</mcr:email>
+			<mcr:affiliation>
+				<mcr:type>National Metrology Institute</mcr:type>
+				<mcr:affiliationAcronym>BEV</mcr:affiliationAcronym>
+				<mcr:affiliationName>Bundesamt für Eich- und Vermessungswesen</mcr:affiliationName>
+				<mcr:address>Arltgasse 35, 1160 Wien, Austria</mcr:address>
+				<mcr:country>Austria</mcr:country>
+				<mcr:countryCodeISO3166_1>AT</mcr:countryCodeISO3166_1>
+				<mcr:rmo>EURAMET</mcr:rmo>
+			</mcr:affiliation>
+		</mcr:person>
+		<mcr:person>
+			<mcr:name>Andrew Lewis</mcr:name>
+			<mcr:role>Co-Author</mcr:role>
+			<mcr:email>andrew.lewis@npl.co.uk</mcr:email>
+			<mcr:affiliation>
+				<mcr:type>National Metrology Institute</mcr:type>
+				<mcr:affiliationAcronym>NPL</mcr:affiliationAcronym>
+				<mcr:affiliationName>National Physics Laboratory</mcr:affiliationName>
+				<mcr:address>Hampton Road, TW11 0LW,Teddington</mcr:address>
+				<mcr:country>Great Britain</mcr:country>
+				<mcr:countryCodeISO3166_1>GB</mcr:countryCodeISO3166_1>
+				<mcr:rmo>EURAMET</mcr:rmo>
+			</mcr:affiliation>
+		</mcr:person>
+	</mcr:authors>
+	<mcr:description>
+		<mcr:descriptionContent>
+			<mcr:paragraph id="Description-P001">The metrological equivalence of national measurement standards and of calibration certificates issued by national metrology institutes is established by a set of key and supplementary comparisons chosen and organized by the Consultative Committees of the CIPM or by the regional metrology organizations in collaboration with the Consultative Committees.</mcr:paragraph>
+			<mcr:paragraph id="Description-P002">At its meeting in September 2007, the CCL decided upon a key comparison of optical frequency and wavelength standards, named CCL-K11, with BEV as the pilot laboratory. The comparison was registered in 2008 and it is supposed as an on-going comparison.</mcr:paragraph>
+			<mcr:paragraph id="Description-P003">This document constitutes the twelfth final report for the ongoing key comparison CCL-K11.</mcr:paragraph>
+		</mcr:descriptionContent>
+		<mcr:releaseDate>2023-05-11T00:00:00+02:00</mcr:releaseDate>
+		<mcr:reference>
+			<mcr:doi>10.1234/example-doi</mcr:doi>
+			<mcr:url>http://example.com</mcr:url>
+		</mcr:reference>
+		<mcr:contact>
+			<mcr:person>
+				<mcr:name>Michael Matus</mcr:name>
+				<mcr:role>Main Author</mcr:role>
+				<mcr:email>michael.matus@bev.gv.at</mcr:email>
+				<mcr:affiliation>
+					<mcr:type>National Metrology Institute</mcr:type>
+					<mcr:affiliationAcronym>BEV</mcr:affiliationAcronym>
+					<mcr:affiliationName>Bundesamt für Eich- und Vermessungswesen</mcr:affiliationName>
+					<mcr:address>Arltgasse 35, 1160 Wien, Austria</mcr:address>
+					<mcr:country>Austria</mcr:country>
+					<mcr:countryCodeISO3166_1>AT</mcr:countryCodeISO3166_1>
+					<mcr:rmo>EURAMET</mcr:rmo>
+				</mcr:affiliation>
+			</mcr:person>
+		</mcr:contact>
+	</mcr:description>
+	<mcr:documentControl>
+		<mcr:versions>
+			<mcr:documentControlItem>
+				<mcr:documentVersion>Version Draft B</mcr:documentVersion>
+				<mcr:issueDate>2023-04-25T00:00:00</mcr:issueDate>
+			</mcr:documentControlItem>
+			<mcr:documentControlItem>
+				<mcr:documentVersion>Version Draft B.1</mcr:documentVersion>
+				<mcr:issueDate>2023-05-20T00:00:00</mcr:issueDate>
+			</mcr:documentControlItem>
+		</mcr:versions>
+	</mcr:documentControl>
+	<mcr:participants>
+		<mcr:institute>
+			<mcr:affiliationAcronym>SMU</mcr:affiliationAcronym>
+			<mcr:affiliationName>Slovenský metrologický ústav</mcr:affiliationName>
+			<mcr:address>Karloveská 63, 842 55 Bratislava</mcr:address>
+			<mcr:country>Slovak Republic</mcr:country>
+			<mcr:countryCodeISO3166_1>SK</mcr:countryCodeISO3166_1>
+			<mcr:rmo>EURAMET</mcr:rmo>
+		</mcr:institute>
+		<mcr:institute>
+			<mcr:affiliationAcronym>LNE-LCM/Cnam</mcr:affiliationAcronym>
+			<mcr:affiliationName>Conservatoire national des arts et métiers</mcr:affiliationName>
+			<mcr:address>61 rue du Landy, 93210 la plaine saint-Denis</mcr:address>
+			<mcr:country>France</mcr:country>
+			<mcr:countryCodeISO3166_1>FR</mcr:countryCodeISO3166_1>
+			<mcr:rmo>EURAMET</mcr:rmo>
+		</mcr:institute>
+	</mcr:participants>
+	<mcr:analysisList>
+		<mcr:analysis id="Analysis-A001" releaseDate="2023-04-25T00:00:00">
+			<mcr:analysisTitle>Example Analysis</mcr:analysisTitle>
+			<mcr:analysisContent>
+				<mcr:paragraph id="Analysis-A001-P001">
+					The analysis description text goes here.
+				</mcr:paragraph>
+			</mcr:analysisContent>
+			<mcr:analysisResults>The analysis results go here.</mcr:analysisResults>
+		</mcr:analysis>
+	</mcr:analysisList>
+	<mcr:appendix>
+		<mcr:appendixTitle>Equipment and measuring processes of the participants</mcr:appendixTitle>
+		<mcr:appendixContent>
+			<mcr:paragraph id="Appendix-P001">
+				Details of the individual equipment, standards and measurement data.
+			</mcr:paragraph>
+		</mcr:appendixContent>
+		<mcr:reportsDraftA>
+			<mcr:measurementReport>
+				<mcr:participantData>
+					<mcr:dateOfMeasurements>
+						<mcr:begin>2023-05-23T00:00:00</mcr:begin>
+						<mcr:end>2023-05-24T00:00:00</mcr:end>
+					</mcr:dateOfMeasurements>
+					<mcr:person>
+						<mcr:name>Jean-Pierre Wallerand </mcr:name>
+						<mcr:role>Participant</mcr:role>
+						<mcr:email>jean-pierre.wallerand@cnam.fr</mcr:email>
+						<mcr:affiliation>
+							<mcr:type>National Metrology Institute</mcr:type>
+							<mcr:affiliationAcronym>LNE-LCM/Cnam</mcr:affiliationAcronym>
+							<mcr:affiliationName>Conservatoire national des arts et métiers</mcr:affiliationName>
+							<mcr:address>61 rue du Landy, 93210 la plaine saint-Denis</mcr:address>
+							<mcr:country>France</mcr:country>
+							<mcr:countryCodeISO3166_1>FR</mcr:countryCodeISO3166_1>
+							<mcr:rmo>EURAMET</mcr:rmo>
+						</mcr:affiliation>
+					</mcr:person>
+					<mcr:participatingInstitute>
+						<mcr:affiliationAcronym>LNE-LCM/Cnam</mcr:affiliationAcronym>
+						<mcr:affiliationName>Conservatoire national des arts et métiers</mcr:affiliationName>
+						<mcr:address>61 rue du Landy, 93210 la plaine saint-Denis</mcr:address>
+						<mcr:country>France</mcr:country>
+						<mcr:countryCodeISO3166_1>FR</mcr:countryCodeISO3166_1>
+						<mcr:rmo>EURAMET</mcr:rmo>
+					</mcr:participatingInstitute>
+					<mcr:hostingInstitute>
+						<mcr:affiliationAcronym>BEV</mcr:affiliationAcronym>
+						<mcr:affiliationName>Bundesamt für Eich- und Vermessungswesen</mcr:affiliationName>
+						<mcr:address>Arltgasse 35, 1160 Wien, Austria</mcr:address>
+						<mcr:country>Austria</mcr:country>
+						<mcr:countryCodeISO3166_1>AT</mcr:countryCodeISO3166_1>
+						<mcr:rmo>EURAMET</mcr:rmo>
+					</mcr:hostingInstitute>
+				</mcr:participantData>
+				<mcr:artefact>
+					<mcr:artefactDescription>
+						<mcr:designation>INM9</mcr:designation>
+						<mcr:manufacturer>LNE-LCM/Cnam</mcr:manufacturer>
+						<mcr:model>Prototype</mcr:model>
+						<mcr:serialNumber>INM9</mcr:serialNumber>
+						<mcr:approxWavelength>
+							<si:real>
+								<si:value>633</si:value>
+								<si:unit>\nano\metre</si:unit>
+							</si:real>
+						</mcr:approxWavelength>
+						<mcr:operationPrinciple>MEP 2003</mcr:operationPrinciple>
+						<mcr:lastCompared>2005 BIPM-K11</mcr:lastCompared>
+					</mcr:artefactDescription>
+					<mcr:artefactDetails>
+						<mcr:laserType>Iodine stabilised HeNe Laser</mcr:laserType>
+						<mcr:stabilisationTechnique>Saturation spectroscopy on iodine vapour, 3f frequency modulation</mcr:stabilisationTechnique>
+						<mcr:ditherFrequency>
+							<si:real>
+								<si:value>5.5</si:value>
+								<si:unit>\kilo\hertz</si:unit>
+							</si:real>
+						</mcr:ditherFrequency>
+						<mcr:modulationFrequency>
+							<si:real>
+								<si:value>6</si:value>
+								<si:unit>\mega\hertz</si:unit>
+							</si:real>
+						</mcr:modulationFrequency>
+						<mcr:iodineCell>BIPM #9, 8 cm, Brewster windows</mcr:iodineCell>
+						<mcr:laserCavityLength>
+							<si:real>
+								<si:value>40</si:value>
+								<si:unit>\centi\metre</si:unit>
+							</si:real>
+						</mcr:laserCavityLength>
+						<mcr:cavityDetails>M1: 60 cm, 1 %, iodine cell side, output mirror, M2: plane, 1 %, rear, tube side</mcr:cavityDetails>
+					</mcr:artefactDetails>
+					<mcr:artefactReferenceConditions>
+						<mcr:workingParameters>
+							<mcr:workingParameter>
+								<mcr:parameter>Output power</mcr:parameter>
+								<mcr:nominalValue>
+									<si:real>
+										<si:value>100</si:value>
+										<si:unit>\micro\watt</si:unit>
+									</si:real>
+								</mcr:nominalValue>
+								<mcr:sensitivityCoefficient>
+									<si:real>
+										<si:value>-0.04</si:value>
+										<si:unit>\kilo\hertz\per\micro\watt</si:unit>
+										<si:expandedUnc>
+											<si:uncertainty>0.01</si:uncertainty>
+											<si:coverageFactor>1</si:coverageFactor>
+											<si:coverageProbability>0.68</si:coverageProbability>
+											<si:distribution>normal</si:distribution>
+										</si:expandedUnc>
+									</si:real>
+								</mcr:sensitivityCoefficient>
+								<mcr:comment>2022 re-measured at LNE-LCM/Cnam</mcr:comment>
+							</mcr:workingParameter>
+							<mcr:workingParameter>
+								<mcr:parameter>Modulation width</mcr:parameter>
+								<mcr:nominalValue>
+									<si:real>
+										<si:value>6</si:value>
+										<si:unit>\mega\hertz</si:unit>
+									</si:real>
+								</mcr:nominalValue>
+								<mcr:sensitivityCoefficient>
+									<si:real>
+										<si:value>-10.2</si:value>
+										<si:unit>\kilo\hertz\per\mega\hertz</si:unit>
+										<si:expandedUnc>
+											<si:uncertainty>1</si:uncertainty>
+											<si:coverageFactor>1</si:coverageFactor>
+											<si:coverageProbability>0.68</si:coverageProbability>
+											<si:distribution>normal</si:distribution>
+										</si:expandedUnc>
+									</si:real>
+								</mcr:sensitivityCoefficient>
+								<mcr:comment>2022 re-measured at LNE-LCM/Cnam</mcr:comment>
+							</mcr:workingParameter>
+							<mcr:workingParameter>
+								<mcr:parameter>Iodine cell cold finger temperature</mcr:parameter>
+								<mcr:nominalValue>
+									<si:real>
+										<si:value>15</si:value>
+										<si:unit>\degreecelsius</si:unit>
+									</si:real>
+								</mcr:nominalValue>
+								<mcr:sensitivityCoefficient>
+									<si:real>
+										<si:value>-13</si:value>
+										<si:unit>\kilo\hertz\per\degreecelsius</si:unit>
+										<si:expandedUnc>
+											<si:uncertainty>1</si:uncertainty>
+											<si:coverageFactor>1</si:coverageFactor>
+											<si:coverageProbability>0.68</si:coverageProbability>
+											<si:distribution>normal</si:distribution>
+										</si:expandedUnc>
+									</si:real>
+								</mcr:sensitivityCoefficient>
+								<mcr:comment>2022 re-measured at LNE-LCM/Cnam</mcr:comment>
+							</mcr:workingParameter>
+						</mcr:workingParameters>
+					</mcr:artefactReferenceConditions>
+				</mcr:artefact>
+				<mcr:results>
+					<mcr:measurementResult>
+						<si:real>
+							<si:label>Expected frequency f_e (C.1)</si:label>
+							<si:value>473612353602.3</si:value>
+							<si:unit>\kilo\hertz</si:unit>
+							<si:expandedUnc>
+								<si:uncertainty>12</si:uncertainty>
+								<si:coverageFactor>1</si:coverageFactor>
+								<si:coverageProbability>0.68</si:coverageProbability>
+								<si:distribution>normal</si:distribution>
+							</si:expandedUnc>
+						</si:real>
+					</mcr:measurementResult>
+					<mcr:uncorrectedMeasuredFrequency>
+						<si:real>
+							<si:label>Measured frequency (uncorrected) f_0 (C.2)</si:label>
+							<si:value>473612353611.806</si:value>
+							<si:unit>\kilo\hertz</si:unit>
+							<si:expandedUnc>
+								<si:uncertainty>0.073</si:uncertainty>
+								<si:coverageFactor>1</si:coverageFactor>
+								<si:coverageProbability>0.68</si:coverageProbability>
+								<si:distribution>normal</si:distribution>
+							</si:expandedUnc>
+						</si:real>
+					</mcr:uncorrectedMeasuredFrequency>
+					<mcr:corrections>
+						<mcr:workingParameterCorrection>
+							<mcr:parameter>Output power</mcr:parameter>
+							<mcr:actualValue>
+								<si:real>
+									<si:value>99</si:value>
+									<si:unit>\micro\watt</si:unit>
+									<si:expandedUnc>
+										<si:uncertainty>5</si:uncertainty>
+										<si:coverageFactor>1</si:coverageFactor>
+										<si:coverageProbability>0.68</si:coverageProbability>
+										<si:distribution>normal</si:distribution>
+									</si:expandedUnc>
+								</si:real>
+							</mcr:actualValue>
+							<mcr:frequencyCorrection>
+								<si:real>
+									<si:value>-0.04</si:value>
+									<si:unit>\kilo\hertz</si:unit>
+									<si:expandedUnc>
+										<si:uncertainty>0.2</si:uncertainty>
+										<si:coverageFactor>1</si:coverageFactor>
+										<si:coverageProbability>0.68</si:coverageProbability>
+										<si:distribution>normal</si:distribution>
+									</si:expandedUnc>
+								</si:real>
+							</mcr:frequencyCorrection>
+						</mcr:workingParameterCorrection>
+						<mcr:workingParameterCorrection>
+							<mcr:parameter>Modulation width</mcr:parameter>
+							<mcr:actualValue>
+								<si:real>
+									<si:value>5.586</si:value>
+									<si:unit>\mega\hertz</si:unit>
+									<si:expandedUnc>
+										<si:uncertainty>0.1</si:uncertainty>
+										<si:coverageFactor>1</si:coverageFactor>
+										<si:coverageProbability>0.68</si:coverageProbability>
+										<si:distribution>normal</si:distribution>
+									</si:expandedUnc>
+								</si:real>
+							</mcr:actualValue>
+							<mcr:frequencyCorrection>
+								<si:real>
+									<si:value>-4.223</si:value>
+									<si:unit>\kilo\hertz</si:unit>
+									<si:expandedUnc>
+										<si:uncertainty>1.101</si:uncertainty>
+										<si:coverageFactor>1</si:coverageFactor>
+										<si:coverageProbability>0.68</si:coverageProbability>
+										<si:distribution>normal</si:distribution>
+									</si:expandedUnc>
+								</si:real>
+							</mcr:frequencyCorrection>
+						</mcr:workingParameterCorrection>
+						<mcr:workingParameterCorrection>
+							<mcr:parameter>Iodine cell cold finger temperature</mcr:parameter>
+							<mcr:actualValue>
+								<si:real>
+									<si:value>15</si:value>
+									<si:unit>\degreecelsius</si:unit>
+									<si:expandedUnc>
+										<si:uncertainty>0.1</si:uncertainty>
+										<si:coverageFactor>1</si:coverageFactor>
+										<si:coverageProbability>0.68</si:coverageProbability>
+										<si:distribution>normal</si:distribution>
+									</si:expandedUnc>
+								</si:real>
+							</mcr:actualValue>
+							<mcr:frequencyCorrection>
+								<si:real>
+									<si:value>0</si:value>
+									<si:unit>\kilo\hertz</si:unit>
+									<si:expandedUnc>
+										<si:uncertainty>1.3</si:uncertainty>
+										<si:coverageFactor>1</si:coverageFactor>
+										<si:coverageProbability>0.68</si:coverageProbability>
+										<si:distribution>normal</si:distribution>
+									</si:expandedUnc>
+								</si:real>
+							</mcr:frequencyCorrection>
+						</mcr:workingParameterCorrection>
+					</mcr:corrections>
+					<mcr:overallFrequencyCorrection>
+						<si:real>
+							<si:label>Overall frequency correction f_p (C.3)</si:label>
+							<si:value>-4.263</si:value>
+							<si:unit>\kilo\hertz</si:unit>
+							<si:expandedUnc>
+								<si:uncertainty>1.715</si:uncertainty>
+								<si:coverageFactor>1</si:coverageFactor>
+								<si:coverageProbability>0.68</si:coverageProbability>
+								<si:distribution>normal</si:distribution>
+							</si:expandedUnc>
+						</si:real>
+					</mcr:overallFrequencyCorrection>
+					<mcr:measuredFrequency>
+						<si:real>
+							<si:label>KCRV - Measured frequency f_m (C.4)</si:label>
+							<si:value>473612353607.543</si:value>
+							<si:unit>\kilo\hertz</si:unit>
+							<si:expandedUnc>
+								<si:uncertainty>1.717</si:uncertainty>
+								<si:coverageFactor>1</si:coverageFactor>
+								<si:coverageProbability>0.68</si:coverageProbability>
+								<si:distribution>normal</si:distribution>
+							</si:expandedUnc>
+						</si:real>
+					</mcr:measuredFrequency>
+					<mcr:frequencyDifference>
+						<si:real>
+							<si:label>Frequency Difference (C.5)</si:label>
+							<si:value>-5.243</si:value>
+							<si:unit>\kilo\hertz</si:unit>
+							<si:expandedUnc>
+								<si:uncertainty>12.122</si:uncertainty>
+								<si:coverageFactor>1</si:coverageFactor>
+								<si:coverageProbability>0.68</si:coverageProbability>
+								<si:distribution>normal</si:distribution>
+							</si:expandedUnc>
+						</si:real>
+					</mcr:frequencyDifference>
+					<mcr:fractionalFrequencyDifference>
+						<si:real>
+							<si:label>Fractional frequency Difference (C.5)</si:label>
+							<si:value>-1.11E-11</si:value>
+							<si:unit>\one</si:unit>
+							<si:expandedUnc>
+								<si:uncertainty>2.56E-11</si:uncertainty>
+								<si:coverageFactor>1</si:coverageFactor>
+								<si:coverageProbability>0.68</si:coverageProbability>
+								<si:distribution>normal</si:distribution>
+							</si:expandedUnc>
+						</si:real>
+					</mcr:fractionalFrequencyDifference>
+					<mcr:degreeOfEquivalence>
+						<si:real>
+							<si:label>E_n Value (C.5)</si:label>
+							<si:value>-0.22</si:value>
+							<si:unit>\one</si:unit>
+						</si:real>
+					</mcr:degreeOfEquivalence>
+				</mcr:results>
+				<mcr:descriptionOfMeasurements>
+					<mcr:paragraph id="Measurements-M1-P001">
+						Method: A femtosecond fiber laser comb generator (BEV) is used to measure the absolute frequency of the 633 nm standard. The output beam of the standard is transferred to the comb via free space, avoiding optical feedback using a double stage Faraday isolator. All counters and synthesizers are referenced to an active hydrogen maser. This maser is part of the BEV clock assemble which takes part in the CCTF-K001.UTC key comparison thus providing a link to the SI.
+					</mcr:paragraph>
+					<mcr:paragraph id="Measurements-M1-P002">
+						Condition: The measurements are made in accordance with the BEV quality system (respective working document A_0118). The laser was put into operation one week before the actual measurements (however not locked). A measurement of 4000 s was made with a sample time of 1 s (raw data filename LNE_2022_f_01.dat). This data was used to determine the KCRV. Immediately before and after this section the working parameters have been determined. Possible cycle slips and outliers are automatically detected and removed using a schema described in the references of the technical protocol and the working document A_0118.
+					</mcr:paragraph>
+					<mcr:paragraph id="Measurements-M1-P003">
+						AllanVariance: A long run absolute frequency measurement of the laser was used to determine the relative overlapping Allan standard deviation (raw data filename LNE_2022_f_02.dat, 70 000 s).
+					</mcr:paragraph>
+					</mcr:descriptionOfMeasurements>
+			</mcr:measurementReport>
+			<mcr:measurementReport>
+				<mcr:participantData>
+					<mcr:dateOfMeasurements>
+						<mcr:begin>2022-09-27T00:00:00</mcr:begin>
+						<mcr:end>2022-09-30T00:00:00</mcr:end>
+					</mcr:dateOfMeasurements>
+					<mcr:person>
+						<mcr:name>Roman Fira</mcr:name>
+						<mcr:role>Participant</mcr:role>
+						<mcr:email>fira@smu.gov.sk</mcr:email>
+						<mcr:affiliation>
+							<mcr:type>National Metrology Institute</mcr:type>
+							<mcr:affiliationAcronym>SMU</mcr:affiliationAcronym>
+							<mcr:affiliationName>Slovenský metrologický ústav</mcr:affiliationName>
+							<mcr:address>Karloveská 63, 842 55 Bratislava</mcr:address>
+							<mcr:country>Slovak Republic</mcr:country>
+							<mcr:countryCodeISO3166_1>SK</mcr:countryCodeISO3166_1>
+							<mcr:rmo>EURAMET</mcr:rmo>
+						</mcr:affiliation>
+					</mcr:person>
+					<mcr:participatingInstitute>
+						<mcr:affiliationAcronym>SMU</mcr:affiliationAcronym>
+						<mcr:affiliationName>Slovenský metrologický ústav</mcr:affiliationName>
+						<mcr:address>Karloveská 63, 842 55 Bratislava</mcr:address>
+						<mcr:country>Slovak Republic</mcr:country>						
+						<mcr:countryCodeISO3166_1>SK</mcr:countryCodeISO3166_1>
+						<mcr:rmo>EURAMET</mcr:rmo>
+					</mcr:participatingInstitute>
+					<mcr:hostingInstitute>
+						<mcr:affiliationAcronym>BEV</mcr:affiliationAcronym>
+						<mcr:affiliationName>Bundesamt für Eich- und Vermessungswesen</mcr:affiliationName>
+						<mcr:address>Arltgasse 35, 1160 Wien, Austria</mcr:address>
+						<mcr:country>Austria</mcr:country>						
+						<mcr:countryCodeISO3166_1>AT</mcr:countryCodeISO3166_1>
+						<mcr:rmo>EURAMET</mcr:rmo>
+					</mcr:hostingInstitute>
+				</mcr:participantData>
+				<mcr:artefact>
+					<mcr:artefactDescription>
+						<mcr:designation>SMU-1</mcr:designation>
+						<mcr:manufacturer>Winters Electro Optics</mcr:manufacturer>
+						<mcr:model>Model 100</mcr:model>
+						<mcr:serialNumber>204</mcr:serialNumber>
+						<mcr:approxWavelength>
+							<si:real>
+								<si:value>633</si:value>
+								<si:unit>\nano\metre</si:unit>
+							</si:real>
+						</mcr:approxWavelength>
+						<mcr:operationPrinciple>MEP 2003</mcr:operationPrinciple>
+						<mcr:lastCompared>June 2010 (CCL-K11)</mcr:lastCompared>
+					</mcr:artefactDescription>
+					<mcr:artefactDetails>
+						<mcr:laserType>Iodine stabilised HeNe Laser</mcr:laserType>
+						<mcr:stabilisationTechnique>Saturation spectroscopy on iodine vapour, 3f frequency modulation</mcr:stabilisationTechnique>
+						<mcr:ditherFrequency>
+							<si:real>
+								<si:value>8.333</si:value>
+								<si:unit>\kilo\hertz</si:unit>
+							</si:real>
+						</mcr:ditherFrequency>
+						<mcr:modulationFrequency>
+							<si:real>
+								<si:value>6</si:value>
+								<si:unit>\mega\hertz</si:unit>
+							</si:real>
+						</mcr:modulationFrequency>
+						<mcr:iodineCell>BIPM #426, 10 cm, Brewster windows</mcr:iodineCell>
+						<mcr:laserCavityLength>
+							<si:real>
+								<si:value>26.5</si:value>
+								<si:unit>\centi\metre</si:unit>
+							</si:real>
+						</mcr:laserCavityLength>
+						<mcr:cavityDetails>M1: 30 cm, 0.7 % , front, output mirror, M2: plane, 0.25 %, rear</mcr:cavityDetails>
+					</mcr:artefactDetails>
+					<mcr:artefactReferenceConditions>
+						<mcr:workingParameters>
+							<mcr:workingParameter>
+								<mcr:parameter>Output power</mcr:parameter>
+								<mcr:nominalValue>
+									<si:real>
+										<si:value>52</si:value>
+										<si:unit>\micro\watt</si:unit>
+									</si:real>
+								</mcr:nominalValue>
+								<mcr:sensitivityCoefficient>
+									<si:real>
+										<si:value>-0.0082</si:value>
+										<si:unit>\kilo\hertz\per\micro\watt</si:unit>
+										<si:expandedUnc>
+											<si:uncertainty>0.0066</si:uncertainty>
+											<si:coverageFactor>1</si:coverageFactor>
+											<si:coverageProbability>0.68</si:coverageProbability>
+											<si:distribution>normal</si:distribution>
+										</si:expandedUnc>
+									</si:real>
+								</mcr:sensitivityCoefficient>
+								<mcr:comment>Measured 2010 at SMU</mcr:comment>
+							</mcr:workingParameter>
+							<mcr:workingParameter>
+								<mcr:parameter>Modulation width</mcr:parameter>
+								<mcr:nominalValue>
+									<si:real>
+										<si:value>6</si:value>
+										<si:unit>\mega\hertz</si:unit>
+									</si:real>
+								</mcr:nominalValue>
+								<mcr:sensitivityCoefficient>
+									<si:real>
+										<si:value>-6.71</si:value>
+										<si:unit>\kilo\hertz\per\mega\hertz</si:unit>
+										<si:expandedUnc>
+											<si:uncertainty>0.5</si:uncertainty>
+											<si:coverageFactor>1</si:coverageFactor>
+											<si:coverageProbability>0.68</si:coverageProbability>
+											<si:distribution>normal</si:distribution>
+										</si:expandedUnc>
+									</si:real>
+								</mcr:sensitivityCoefficient>
+								<mcr:comment>Measured 2010 at SMU</mcr:comment>
+							</mcr:workingParameter>
+							<mcr:workingParameter>
+								<mcr:parameter>Iodine cell cold finger temperature</mcr:parameter>
+								<mcr:nominalValue>
+									<si:real>
+										<si:value>12.9</si:value>
+										<si:unit>\degreecelsius</si:unit>
+									</si:real>
+								</mcr:nominalValue>
+								<mcr:sensitivityCoefficient>
+									<si:real>
+										<si:value>-12.51</si:value>
+										<si:unit>\kilo\hertz\per\degreecelsius</si:unit>
+										<si:expandedUnc>
+											<si:uncertainty>3.2</si:uncertainty>
+											<si:coverageFactor>1</si:coverageFactor>
+											<si:coverageProbability>0.68</si:coverageProbability>
+											<si:distribution>normal</si:distribution>
+										</si:expandedUnc>
+									</si:real>
+								</mcr:sensitivityCoefficient>
+								<mcr:comment>Measured 2010 at SMU</mcr:comment>
+							</mcr:workingParameter>
+						</mcr:workingParameters>
+					</mcr:artefactReferenceConditions>
+				</mcr:artefact>
+				<mcr:results>
+					<mcr:measurementResult>
+						<si:real>
+							<si:label>Expected frequency f_e (C.1)</si:label>
+							<si:value>473612353638</si:value>
+							<si:unit>\kilo\hertz</si:unit>
+							<si:expandedUnc>
+								<si:uncertainty>10</si:uncertainty>
+								<si:coverageFactor>1</si:coverageFactor>
+								<si:coverageProbability>0.68</si:coverageProbability>
+								<si:distribution>normal</si:distribution>
+							</si:expandedUnc>
+						</si:real>
+					</mcr:measurementResult>
+					<mcr:uncorrectedMeasuredFrequency>
+						<si:real>
+							<si:label>Measured frequency (uncorrected) f_0 (C.2)</si:label>
+							<si:value>473612353638.681</si:value>
+							<si:unit>\kilo\hertz</si:unit>
+							<si:expandedUnc>
+								<si:uncertainty>0.075</si:uncertainty>
+								<si:coverageFactor>1</si:coverageFactor>
+								<si:coverageProbability>0.68</si:coverageProbability>
+								<si:distribution>normal</si:distribution>
+							</si:expandedUnc>
+						</si:real>
+					</mcr:uncorrectedMeasuredFrequency>
+					<mcr:corrections>
+						<mcr:workingParameterCorrection>
+							<mcr:parameter>Output power</mcr:parameter>
+							<mcr:actualValue>
+								<si:real>
+									<si:value>46</si:value>
+									<si:unit>\micro\watt</si:unit>
+									<si:expandedUnc>
+										<si:uncertainty>5</si:uncertainty>
+										<si:coverageFactor>1</si:coverageFactor>
+										<si:coverageProbability>0.68</si:coverageProbability>
+										<si:distribution>normal</si:distribution>
+									</si:expandedUnc>
+								</si:real>
+							</mcr:actualValue>
+						</mcr:workingParameterCorrection>
+						<mcr:workingParameterCorrection>
+							<mcr:parameter>Modulation width</mcr:parameter>
+							<mcr:actualValue>
+								<si:real>
+									<si:value>5.998</si:value>
+									<si:unit>\mega\hertz</si:unit>
+									<si:expandedUnc>
+										<si:uncertainty>0.1</si:uncertainty>
+										<si:coverageFactor>1</si:coverageFactor>
+										<si:coverageProbability>0.68</si:coverageProbability>
+										<si:distribution>normal</si:distribution>
+									</si:expandedUnc>
+								</si:real>
+							</mcr:actualValue>
+						</mcr:workingParameterCorrection>
+						<mcr:workingParameterCorrection>
+							<mcr:parameter>Iodine cell cold finger temperature</mcr:parameter>
+							<mcr:actualValue>
+								<si:real>
+									<si:value>12.9</si:value>
+									<si:unit>\degreecelsius</si:unit>
+									<si:expandedUnc>
+										<si:uncertainty>0.1</si:uncertainty>
+										<si:coverageFactor>1</si:coverageFactor>
+										<si:coverageProbability>0.68</si:coverageProbability>
+										<si:distribution>normal</si:distribution>
+									</si:expandedUnc>
+								</si:real>
+							</mcr:actualValue>
+						</mcr:workingParameterCorrection>
+					</mcr:corrections>
+					<mcr:measuredFrequency>
+						<si:real>
+							<si:label>KCRV - Measured frequency f_m (C.4)</si:label>
+							<si:value>473612353638.681</si:value>
+							<si:unit>\kilo\hertz</si:unit>
+							<si:expandedUnc>
+								<si:uncertainty>0.075</si:uncertainty>
+								<si:coverageFactor>1</si:coverageFactor>
+								<si:coverageProbability>0.68</si:coverageProbability>
+								<si:distribution>normal</si:distribution>
+							</si:expandedUnc>
+						</si:real>
+					</mcr:measuredFrequency>
+					<mcr:measuredFrequency>
+						<si:real>
+							<si:label>Frequency Difference (C.5)</si:label>
+							<si:value>-0.681</si:value>
+							<si:unit>\kilo\hertz</si:unit>
+							<si:expandedUnc>
+								<si:uncertainty>10</si:uncertainty>
+								<si:coverageFactor>1</si:coverageFactor>
+								<si:coverageProbability>0.68</si:coverageProbability>
+								<si:distribution>normal</si:distribution>
+							</si:expandedUnc>
+						</si:real>
+					</mcr:measuredFrequency>
+					<mcr:fractionalFrequencyDifference>
+						<si:real>
+							<si:label>Fractional frequency Difference (C.5)</si:label>
+							<si:value>-1.4E-12</si:value>
+							<si:unit>\one</si:unit>
+							<si:expandedUnc>
+								<si:uncertainty>2.11E-11</si:uncertainty>
+								<si:coverageFactor>1</si:coverageFactor>
+								<si:coverageProbability>0.68</si:coverageProbability>
+								<si:distribution>normal</si:distribution>
+							</si:expandedUnc>
+						</si:real>
+					</mcr:fractionalFrequencyDifference>
+					<mcr:degreeOfEquivalence>
+						<si:real>
+							<si:label>E_n Value (C.5)</si:label>
+							<si:value>-0.03</si:value>
+							<si:unit>\one</si:unit>
+						</si:real>
+					</mcr:degreeOfEquivalence>
+				</mcr:results>
+				<mcr:descriptionOfMeasurements>
+					<mcr:paragraph id="Measurements-M2-P001">
+						Method: A femtosecond fiber laser comb generator (BEV) is used to measure the absolute frequency of the 633 nm standard. The output beam of the standard is transferred to the comb via free space, avoiding optical feedback using a double stage Faraday isolator. All counters and synthesizers are referenced to an active hydrogen maser. This maser is part of the BEV clock assemble which takes part in the CCTF-K001.UTC key comparison thus providing a link to the SI.
+					</mcr:paragraph>
+					<mcr:paragraph id="Measurements-M2-P002">
+						Condition: The measurements are made in accordance with the BEV quality system (respective working document A_0118). The laser was put into operation one day before the actual measurements (manually locked). A measurement of 6900 s was made with a sample time of 1 s (raw data filename SMU_2022_02.dat). This data was used to determine the KCRV. Immediately before and after this section the working parameters have been determined. Possible cycle slips and outliers are automatically detected and removed using a schema described in the references of the technical protocol and the working document A_0118.
+					</mcr:paragraph>
+					<mcr:paragraph id="Measurements-M2-P003">
+						Observation: The laser model tested in this comparison comes with an automatic line detection. The operator decided to lock the laser manually, since he has doubt on the reliability of this system.
+					</mcr:paragraph>
+					<mcr:paragraph id="Measurements-M2-P004">
+						AllanVariance: A long run absolute frequency measurement of the laser was used to determine the relative overlapping Allan standard deviation (raw data filename SMU_2022_03.dat, 80 000 s).
+					</mcr:paragraph>
+				</mcr:descriptionOfMeasurements>
+			</mcr:measurementReport>
+		</mcr:reportsDraftA>
+	</mcr:appendix>
+</mcr:comparisonReport>
