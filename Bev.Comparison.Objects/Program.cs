@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Configuration;
 using Bev.Comparison.Objects.Objects;
 using Bev.Comparison.Objects.Objects.Report;
 using Bev.Comparison.Objects.Objects.Report.Artefact;
