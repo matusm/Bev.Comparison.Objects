@@ -1,394 +1,397 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mcr="https://bev.gv.at/mcr" xmlns:si="https://ptb.de/si" targetNamespace="https://bev.gv.at/mcr" elementFormDefault="qualified">
-	<xs:import namespace="https://ptb.de/si" schemaLocation="https://ptb.de/si/v2.1.0/SI_Format.xsd"/>
-	<xs:annotation>
-		<xs:documentation>
-            MCR - Measurement Comparison Report
-            Copyright (c) 2023 Physikalisch-technischer Prüfdienst (PTP) des Bundesamts für Eich- und Vermessungswesen (BEV)
+  <xs:import namespace="https://ptb.de/si" schemaLocation="https://ptb.de/si/v2.1.0/SI_Format.xsd"/>
+  <xs:annotation>
+    <xs:documentation>
+      MCR - Measurement Comparison Report
+      Copyright (c) 2023 Physikalisch-technischer Prüfdienst (PTP) des Bundesamts für Eich- und Vermessungswesen (BEV)
 
-            This XML Schema Definition (XSD) is free software: you can redistribute it and/or modify
-            it under the terms of the GNU Lesser General Public License as published by
-            the Free Software Foundation, version 3 of the License.
+      This XML Schema Definition (XSD) is free software: you can redistribute it and/or modify
+      it under the terms of the GNU Lesser General Public License as published by
+      the Free Software Foundation, version 3 of the License.
 
-            This XSD is issued WITHOUT ANY WARRANTY; without even the implied warranty of
-            MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-            GNU Lesser General Public License for more details.
+      This XSD is issued WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+      GNU Lesser General Public License for more details.
 
-            Documentation: https://bev.gv.at/mcr/v1.0/
-        </xs:documentation>
-	</xs:annotation>
-	
-	<xs:simpleType name="reportType">
-		<xs:restriction base="xs:string">
+      Documentation: https://bev.gv.at/mcr/v1.0/
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:simpleType name="reportType">
+    <xs:restriction base="xs:string">
       <xs:enumeration value="Draft A report"/>
-			<xs:enumeration value="Draft B report"/>
+      <xs:enumeration value="Draft B report"/>
       <xs:enumeration value="Final report"/>
-			<!-- Add more allowed values as needed -->
-		</xs:restriction>
-	</xs:simpleType>
-	
-	<xs:element name="comparisonReport" type="mcr:comparisonReportType"/>
-	<xs:complexType name="comparisonReportType">
-		<xs:annotation>
-			<xs:documentation>
-                Root element containing the main parts of the report.
-            </xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="fullTitle" type="xs:string"/>
-			<xs:element name="shortTitle" type="xs:string"/>
-			<xs:element name="comparisonType" type="xs:string"/>
-			<xs:element name="reportType" type="mcr:reportType"/>
-			<xs:element name="authors" type="mcr:authorsType"/>
-			<xs:element name="description" type="mcr:descriptionType"/>
-			<xs:element name="documentControl" type="mcr:documentControlType"/>
-			<xs:element name="participants" type="mcr:participantsType"/>
-			<xs:element name="analysisList" type="mcr:analysisListType"/>
-			<xs:element name="appendix" type="mcr:appendixType"/>
-		</xs:sequence>
-		<xs:attribute name="schemaVersion" use="required">
-			<xs:simpleType>
-				<xs:restriction base="xs:string">
-					<xs:pattern value="1\.0"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-	</xs:complexType>
-	<xs:complexType name="authorsType">
-		<xs:annotation>
-			<xs:documentation>
-                The element authorsType contains relevant author information.
-            </xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="person" type="mcr:personType" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:simpleType name="nameType">
-		<xs:restriction base="xs:string">
-			<xs:pattern value="[A-Za-z\s-]+"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="roleType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Main Author"/>
-			<xs:enumeration value="Co-Author"/>
-			<xs:enumeration value="Participant"/>
-			<xs:enumeration value="Reviewer"/>
-			<!-- Add more allowed values as needed -->
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="emailType">
-		<xs:restriction base="xs:string">
-			<xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="personType">
-		<xs:annotation>
-			<xs:documentation>
-                A person's relevant information.
-            </xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="name" type="mcr:nameType"/>
-			<xs:element name="role" type="mcr:roleType"/>
-			<xs:element name="email" type="mcr:emailType"/>
-			<xs:element name="affiliation" type="mcr:affiliationType"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:simpleType name="affiliationTypeEnum">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Company"/>
-			<xs:enumeration value="University"/>
-			<xs:enumeration value="National Metrology Institute"/>
-			<xs:enumeration value="Calibration Laboratory"/>
-			<!-- Add more allowed values as needed -->
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="countryName">
-		<xs:restriction base="xs:string">
-			<xs:minLength value="1"/>
-			<xs:maxLength value="100"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="countryCodeISO3166_1">
-		<xs:restriction base="xs:string">
-			<xs:pattern value="[A-Z]{2}"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="affiliationType">
-		<xs:annotation>
-			<xs:documentation>
-                Affiliation details of a contributing party.
-            </xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="type" type="mcr:affiliationTypeEnum" minOccurs="0"/>
-			<xs:element name="affiliationAcronym" type="xs:string" minOccurs="0"/>
-			<xs:element name="affiliationName" type="xs:string"/>
-			<xs:element name="address" type="xs:string"/>
-			<xs:element name="country" type="mcr:countryName"/>
-			<xs:element name="countryCodeISO3166_1" type="mcr:countryCodeISO3166_1"/>
-			<!-- Regional Metrology Organization (RMO) -->
-			<xs:element name="rmo" type="xs:string" minOccurs="0"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="descriptionType">
-		<xs:annotation>
-			<xs:documentation>
-                Description element to provide further information regarding content of the document and a (optional) list of contact information.
-            </xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="descriptionContent" type="mcr:contentType"/>
-			<xs:element name="releaseDate" type="xs:dateTime"/>
-			<xs:element name="reference" type="mcr:reference"/>
-			<xs:element name="contact" type="mcr:contactListType"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="contentType">
-		<xs:sequence>
-			<xs:element name="paragraph" type="mcr:paragraphType" maxOccurs="unbounded"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="paragraphType">
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute name="id" type="xs:string" use="optional"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:complexType name="reference">
-		<xs:sequence>
-			<xs:element name="doi" type="xs:string"/>
-			<xs:element name="url" type="xs:anyURI"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="contactListType">
-		<xs:sequence>
-			<xs:element name="person" type="mcr:personType" minOccurs="0" maxOccurs="unbounded"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="documentControlType">
-		<xs:annotation>
-			<xs:documentation>
-                Description element to provide further information regarding content of the document and a (optional) list of contact information.
-            </xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="versions" type="mcr:versionListType"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="versionListType">
-		<xs:sequence>
-			<xs:element name="documentControlItem" type="mcr:documentControlItemType" minOccurs="0" maxOccurs="unbounded"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="documentControlItemType">
-		<xs:sequence>
-			<xs:element name="documentVersion" type="xs:string"/>
-			<xs:element name="issueDate" type="xs:dateTime"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="participantsType">
-		<xs:sequence>
-			<xs:element name="institute" type="mcr:affiliationType" minOccurs="0" maxOccurs="unbounded"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="analysisListType">
-		<xs:sequence>
-			<xs:element name="analysis" type="mcr:analysisType" minOccurs="0" maxOccurs="unbounded"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="analysisType">
-		<!-- The content has to be discussed with the stakeholders and is open for suggestions -->
-		<xs:sequence>
-			<xs:element name="analysisTitle" type="xs:string"/>
-			<xs:element name="analysisContent" type="mcr:contentType"/>
-			<xs:element name="analysisResults" type="xs:string"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-		<xs:attribute name="id" type="xs:string"/>
-		<xs:attribute name="releaseDate" type="xs:dateTime"/>
-	</xs:complexType>
-	<xs:complexType name="appendixType">
-		<xs:annotation>
-			<xs:documentation>
-                This section contains the measurement report with the participing stakeholders as well as artefacts, environment conditions and measurement results.
-            </xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="appendixTitle" type="xs:string"/>
-			<xs:element name="appendixContent" type="mcr:contentType"/>
-			<xs:element name="reportsDraftA" type="mcr:reportsDraftAType"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="reportsDraftAType">
-		<xs:sequence>
-			<xs:element name="measurementReport" type="mcr:measurementReportType" minOccurs="0" maxOccurs="unbounded"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-		<xs:attribute name="id" type="xs:string"/>
-		<xs:attribute name="releaseDate" type="xs:dateTime"/>
-	</xs:complexType>
-	<xs:complexType name="measurementReportType">
-		<xs:sequence>
-			<xs:element name="participantData" type="mcr:participantDataType"/>
-			<xs:element name="artefact" type="mcr:artefactType"/>
-			<xs:element name="results" type="mcr:resultsListType"/>
-			<xs:element name="descriptionOfMeasurements" type="mcr:contentType"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="participantDataType">
-		<xs:sequence>
-			<xs:element name="dateOfMeasurements" type="mcr:dateOfMeasurementsType"/>
-			<xs:element name="person" type="mcr:personType"/>
-			<xs:element name="participatingInstitute" type="mcr:affiliationType"/>
-			<xs:element name="hostingInstitute" type="mcr:affiliationType"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="dateOfMeasurementsType">
-		<xs:sequence>
-			<xs:element name="begin" type="xs:dateTime"/>
-			<xs:element name="end" type="xs:dateTime"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="artefactType">
-		<xs:sequence>
-			<xs:element name="artefactDescription" type="mcr:artefactDescription"/>
-			<xs:element name="artefactDetails" type="mcr:artefactDetailsType"/>
-			<xs:element name="artefactReferenceConditions" type="mcr:artefactReferenceConditions"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="artefactDescription">
-		<xs:sequence>
-			<xs:element name="designation" type="xs:string"/>
-			<xs:element name="manufacturer" type="xs:string"/>
-			<xs:element name="model" type="xs:string"/>
-			<xs:element name="serialNumber" type="xs:string"/>
-			<xs:element name="approxWavelength" type="mcr:quantityType"/>
-			<xs:element name="operationPrinciple" type="xs:string"/>
-			<xs:element name="lastCompared" type="xs:string"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="quantityType">
-		<xs:annotation>
-			<xs:documentation>
-				A single measurement quantity that can contain a D-SI element or text.
-				Additionally used methods, used software, influence conditions that only affect this quantity can be
-				added.
-				Measurement metadata can also be added.
-			</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="name" type="xs:string" minOccurs="0"/>
-			<xs:element name="description" type="xs:string" minOccurs="0"/>
-			<xs:choice>
-				<xs:element name="noQuantity" type="xs:string"/>
-				<xs:element ref="si:real"/>
-				<xs:element ref="si:list"/>
-				<xs:element ref="si:hybrid"/>
-				<xs:element ref="si:complex"/>
-				<xs:element ref="si:constant"/>
-				<xs:element ref="si:realListXMLList"/>
-			</xs:choice>
-			<xs:element name="relativeUncertainty" type="si:realListXMLListType" minOccurs="0" />
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="artefactDetailsType">
-		<xs:sequence>
-			<xs:element name="laserType" type="xs:string"/>
-			<xs:element name="stabilisationTechnique" type="xs:string"/>
-			<xs:element name="ditherFrequency" type="mcr:quantityType"/>
-			<xs:element name="modulationFrequency" type="mcr:quantityType"/>
-			<xs:element name="iodineCell" type="xs:string"/>
-			<xs:element name="laserCavityLength" type="mcr:quantityType"/>
-			<xs:element name="cavityDetails" type="xs:string"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="artefactReferenceConditions">
-		<xs:sequence>
-			<xs:element name="workingParameters" type="mcr:workingParametersListType"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="workingParametersListType">
-		<xs:sequence>
-			<xs:element name="workingParameter" type="mcr:workingParameterType" minOccurs="0" maxOccurs="unbounded"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="workingParameterType">
-		<xs:sequence>
-			<xs:element name="parameter" type="xs:string"/>
-			<xs:element name="nominalValue" type="mcr:quantityType"/>
-			<xs:element name="sensitivityCoefficient" type="mcr:quantityType"/>
-			<xs:element name="comment" type="xs:string"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="resultsListType">
-		<xs:sequence>
-			<xs:element name="measurementResult" type="mcr:quantityType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="uncorrectedMeasuredFrequency" type="mcr:quantityType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="corrections" type="mcr:correctionsListType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="overallFrequencyCorrection" type="mcr:quantityType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="measuredFrequency" type="mcr:quantityType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="frequencyDifference" type="mcr:quantityType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="fractionalFrequencyDifference" type="mcr:quantityType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="degreeOfEquivalence" type="mcr:quantityType" minOccurs="0" maxOccurs="unbounded"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="measurementResultType">
-		<xs:sequence>
-			<xs:element name="parameter" type="xs:string"/>
-			<xs:element name="nominalValue" type="mcr:quantityType"/>
-			<xs:element name="sensitivityCoefficient" type="mcr:quantityType"/>
-			<xs:element name="comment" type="xs:string"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="correctionsListType">
-		<xs:sequence>
-			<xs:element name="workingParameterCorrection" type="mcr:workingParameterCorrectionType" minOccurs="0" maxOccurs="unbounded"/>
-			<!-- Add more elements as needed -->
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="workingParameterCorrectionType">
-		<xs:all>
-			<xs:element name="parameter" type="xs:string"/>
-			<xs:element name="actualValue" type="mcr:quantityType"/>
-			<xs:element name="frequencyCorrection" type="mcr:quantityType" minOccurs="0"/>
-			<!-- Add more elements as needed -->
-		</xs:all>
-	</xs:complexType>
+      <!-- Add more allowed values as needed -->
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="comparisonReport" type="mcr:comparisonReportType"/>
+  <xs:complexType name="comparisonReportType">
+    <xs:annotation>
+      <xs:documentation>
+        Root element containing the main parts of the report.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!-- This is very CCL-K11 specific -->
+      <xs:element name="fullTitle" type="xs:string"/>
+      <xs:element name="shortTitle" type="xs:string"/>
+      <xs:element name="comparisonType" type="xs:string"/>
+      <xs:element name="reportType" type="mcr:reportType"/>
+      <xs:element name="authors" type="mcr:authorsType"/>
+      <xs:element name="description" type="mcr:descriptionType"/>
+      <xs:element name="documentControl" type="mcr:documentControlType"/>
+      <xs:element name="participants" type="mcr:participantsType"/>
+      <xs:element name="analysisList" type="mcr:analysisListType"/>
+      <xs:element name="appendix" type="mcr:appendixType"/>
+    </xs:sequence>
+    <xs:attribute name="schemaVersion" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="1\.0"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="authorsType">
+    <xs:annotation>
+      <xs:documentation>
+        The element authorsType contains relevant author information.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="person" type="mcr:personType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="nameType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Za-z\s-]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="roleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Main Author"/>
+      <xs:enumeration value="Co-Author"/>
+      <xs:enumeration value="Participant"/>
+      <xs:enumeration value="Reviewer"/>
+      <xs:enumeration value="Host"/>
+      <xs:enumeration value="Node"/>
+      <!-- Add more allowed values as needed -->
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="emailType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="personType">
+    <xs:annotation>
+      <xs:documentation>
+        A person's relevant information.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="mcr:nameType"/>
+      <xs:element name="role" type="mcr:roleType"/>
+      <xs:element name="email" type="mcr:emailType"/>
+      <xs:element name="affiliation" type="mcr:affiliationType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="affiliationTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Company"/>
+      <xs:enumeration value="University"/>
+      <xs:enumeration value="National Metrology Institute"/>
+      <xs:enumeration value="Calibration Laboratory"/>
+      <!-- Add more allowed values as needed -->
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="countryName">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="countryCodeISO3166_1">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="affiliationType">
+    <xs:annotation>
+      <xs:documentation>
+        Affiliation details of a contributing party.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="type" type="mcr:affiliationTypeEnum" minOccurs="0"/>
+      <xs:element name="affiliationAcronym" type="xs:string" minOccurs="0"/>
+      <xs:element name="affiliationName" type="xs:string"/>
+      <xs:element name="address" type="xs:string"/>
+      <xs:element name="country" type="mcr:countryName"/>
+      <xs:element name="countryCodeISO3166_1" type="mcr:countryCodeISO3166_1"/>
+      <!-- Regional Metrology Organization (RMO) -->
+      <xs:element name="rmo" type="xs:string" minOccurs="0"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="descriptionType">
+    <xs:annotation>
+      <xs:documentation>
+        Description element to provide further information regarding content of the document and a (optional) list of contact information.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="descriptionContent" type="mcr:contentType"/>
+      <xs:element name="releaseDate" type="xs:dateTime"/>
+      <xs:element name="reference" type="mcr:reference"/>
+      <xs:element name="contact" type="mcr:contactListType"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="contentType">
+    <xs:sequence>
+      <xs:element name="paragraph" type="mcr:paragraphType" maxOccurs="unbounded"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="paragraphType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="id" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="reference">
+    <xs:sequence>
+      <xs:element name="doi" type="xs:string"/>
+      <xs:element name="url" type="xs:anyURI"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="contactListType">
+    <xs:sequence>
+      <xs:element name="person" type="mcr:personType" minOccurs="0" maxOccurs="unbounded"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="documentControlType">
+    <xs:annotation>
+      <xs:documentation>
+        Description element to provide further information regarding content of the document and a (optional) list of contact information.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="versions" type="mcr:versionListType"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="versionListType">
+    <xs:sequence>
+      <xs:element name="documentControlItem" type="mcr:documentControlItemType" minOccurs="0" maxOccurs="unbounded"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="documentControlItemType">
+    <xs:sequence>
+      <xs:element name="documentVersion" type="xs:string"/>
+      <xs:element name="issueDate" type="xs:dateTime"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="participantsType">
+    <xs:sequence>
+      <xs:element name="institute" type="mcr:affiliationType" minOccurs="0" maxOccurs="unbounded"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="analysisListType">
+    <xs:sequence>
+      <xs:element name="analysis" type="mcr:analysisType" minOccurs="0" maxOccurs="unbounded"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="analysisType">
+    <!-- The content has to be discussed with the stakeholders and is open for suggestions -->
+    <xs:sequence>
+      <xs:element name="analysisTitle" type="xs:string"/>
+      <xs:element name="analysisContent" type="mcr:contentType"/>
+      <xs:element name="analysisResults" type="xs:string"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="releaseDate" type="xs:dateTime"/>
+  </xs:complexType>
+  <xs:complexType name="appendixType">
+    <xs:annotation>
+      <xs:documentation>
+        This section contains the measurement report with the participing stakeholders as well as artefacts, environment conditions and measurement results.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="appendixTitle" type="xs:string"/>
+      <xs:element name="appendixContent" type="mcr:contentType"/>
+      <xs:element name="reportsDraftA" type="mcr:reportsDraftAType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reportsDraftAType">
+    <xs:sequence>
+      <xs:element name="measurementReport" type="mcr:measurementReportType" minOccurs="0" maxOccurs="unbounded"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="releaseDate" type="xs:dateTime"/>
+  </xs:complexType>
+  <xs:complexType name="measurementReportType">
+    <xs:sequence>
+      <xs:element name="participantData" type="mcr:participantDataType"/>
+      <xs:element name="artefact" type="mcr:artefactType"/>
+      <xs:element name="results" type="mcr:resultsListType"/>
+      <xs:element name="descriptionOfMeasurements" type="mcr:contentType"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="participantDataType">
+    <xs:sequence>
+      <xs:element name="dateOfMeasurements" type="mcr:dateOfMeasurementsType"/>
+      <xs:element name="person" type="mcr:personType"/>
+      <xs:element name="participatingInstitute" type="mcr:affiliationType"/>
+      <xs:element name="hostingInstitute" type="mcr:affiliationType"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dateOfMeasurementsType">
+    <xs:sequence>
+      <xs:element name="begin" type="xs:dateTime"/>
+      <xs:element name="end" type="xs:dateTime"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="artefactType">
+    <xs:sequence>
+      <xs:element name="artefactDescription" type="mcr:artefactDescription"/>
+      <xs:element name="artefactDetails" type="mcr:artefactDetailsType"/>
+      <xs:element name="artefactReferenceConditions" type="mcr:artefactReferenceConditions"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="artefactDescription">
+    <xs:sequence>
+      <xs:element name="designation" type="xs:string"/>
+      <xs:element name="manufacturer" type="xs:string"/>
+      <xs:element name="model" type="xs:string"/>
+      <xs:element name="serialNumber" type="xs:string"/>
+      <xs:element name="approxWavelength" type="mcr:quantityType"/>
+      <xs:element name="operationPrinciple" type="xs:string"/>
+      <xs:element name="lastCompared" type="xs:string"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="quantityType">
+    <xs:annotation>
+      <xs:documentation>
+        A single measurement quantity that can contain a D-SI element or text.
+        Additionally used methods, used software, influence conditions that only affect this quantity can be
+        added.
+        Measurement metadata can also be added.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:choice>
+        <xs:element name="noQuantity" type="xs:string"/>
+        <xs:element ref="si:real"/>
+        <xs:element ref="si:list"/>
+        <xs:element ref="si:hybrid"/>
+        <xs:element ref="si:complex"/>
+        <xs:element ref="si:constant"/>
+        <xs:element ref="si:realListXMLList"/>
+      </xs:choice>
+      <xs:element name="relativeUncertainty" type="si:realListXMLListType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="artefactDetailsType">
+    <xs:sequence>
+      <xs:element name="laserType" type="xs:string"/>
+      <xs:element name="stabilisationTechnique" type="xs:string"/>
+      <xs:element name="ditherFrequency" type="mcr:quantityType"/>
+      <xs:element name="modulationFrequency" type="mcr:quantityType"/>
+      <xs:element name="iodineCell" type="xs:string"/>
+      <xs:element name="laserCavityLength" type="mcr:quantityType"/>
+      <xs:element name="cavityDetails" type="xs:string"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="artefactReferenceConditions">
+    <xs:sequence>
+      <xs:element name="workingParameters" type="mcr:workingParametersListType"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="workingParametersListType">
+    <xs:sequence>
+      <xs:element name="workingParameter" type="mcr:workingParameterType" minOccurs="0" maxOccurs="unbounded"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="workingParameterType">
+    <xs:sequence>
+      <xs:element name="parameter" type="xs:string"/>
+      <xs:element name="nominalValue" type="mcr:quantityType"/>
+      <xs:element name="sensitivityCoefficient" type="mcr:quantityType"/>
+      <xs:element name="comment" type="xs:string"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="resultsListType">
+    <xs:sequence>
+      <xs:element name="measurementResult" type="mcr:quantityType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="uncorrectedMeasuredFrequency" type="mcr:quantityType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="corrections" type="mcr:correctionsListType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="overallFrequencyCorrection" type="mcr:quantityType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="measuredFrequency" type="mcr:quantityType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="frequencyDifference" type="mcr:quantityType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="fractionalFrequencyDifference" type="mcr:quantityType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="degreeOfEquivalence" type="mcr:quantityType" minOccurs="0" maxOccurs="unbounded"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="measurementResultType">
+    <xs:sequence>
+      <xs:element name="parameter" type="xs:string"/>
+      <xs:element name="nominalValue" type="mcr:quantityType"/>
+      <xs:element name="sensitivityCoefficient" type="mcr:quantityType"/>
+      <xs:element name="comment" type="xs:string"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="correctionsListType">
+    <xs:sequence>
+      <xs:element name="workingParameterCorrection" type="mcr:workingParameterCorrectionType" minOccurs="0" maxOccurs="unbounded"/>
+      <!-- Add more elements as needed -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="workingParameterCorrectionType">
+    <xs:all>
+      <xs:element name="parameter" type="xs:string"/>
+      <xs:element name="actualValue" type="mcr:quantityType"/>
+      <xs:element name="frequencyCorrection" type="mcr:quantityType" minOccurs="0"/>
+      <!-- Add more elements as needed -->
+    </xs:all>
+  </xs:complexType>
 </xs:schema>
