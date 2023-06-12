@@ -78,6 +78,7 @@
       <xs:enumeration value="Reviewer"/>
       <xs:enumeration value="Host"/>
       <xs:enumeration value="Node"/>
+      <xs:enumeration value="Pilot"/>
       <!-- Add more allowed values as needed -->
     </xs:restriction>
   </xs:simpleType>
@@ -106,6 +107,7 @@
       <xs:enumeration value="National Metrology Institute"/>
       <xs:enumeration value="Calibration Laboratory"/>
       <!-- Add more allowed values as needed -->
+      <!-- We need NMI here only -->
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="countryName">
