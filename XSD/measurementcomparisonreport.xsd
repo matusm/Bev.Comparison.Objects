@@ -20,7 +20,9 @@
 	
 	<xs:simpleType name="reportType">
 		<xs:restriction base="xs:string">
+      <xs:enumeration value="Draft A report"/>
 			<xs:enumeration value="Draft B report"/>
+      <xs:enumeration value="Final report"/>
 			<!-- Add more allowed values as needed -->
 		</xs:restriction>
 	</xs:simpleType>
